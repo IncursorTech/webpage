@@ -1,0 +1,31 @@
+{
+  "us": {
+    "name": "United States",
+    "city": {
+      "newyork": "New York",
+      "losangeles": "Los Angeles",
+      "miami": "Miami",
+      "chicago": "Chicago",
+      "washington": "Washington",
+      "dc": "Washington, D.C."
+    }
+  },
+  "uk": {
+    "name": "United Kingdom",
+    "city": {
+      "london": "London",
+      "bristol": "Bristol",
+      "cambridge": "Cambridge",
+      "oxford": "Oxford"
+    }
+  },
+  "tr": {
+    "name": "Turkey",
+    "city": {
+      "istanbul": "Istanbul",
+      "izmir": "Izmir",
+      "ankara": "Ankara",
+      "bursa": "Bursa"
+    }
+  }
+}
