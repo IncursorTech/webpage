@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["Chakra", "Jitsi"]
+  "cSpell.words": ["Chakra", "Jitsi"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

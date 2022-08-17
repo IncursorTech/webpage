@@ -1,14 +1,12 @@
-import { Flex } from '@chakra-ui/react';
-import React from 'react';
+import styled from 'styled-components';
+import { media } from 'utils/media';
+const Separator = styled.div `
+  margin: 12.5rem 0;
+  border: 1px solid rgba(var(--secondary), 0.025);
+  height: 0px;
 
-const HSeparator = (props) => {
-  const { variant, children, ...rest } = props;
-  return <Flex h="1px" w="100%" bg="rgba(135, 140, 189, 0.3)" {...rest}></Flex>;
-};
-
-const VSeparator = (props) => {
-  const { variant, children, ...rest } = props;
-  return <Flex w="1px" bg="rgba(135, 140, 189, 0.3)" {...rest}></Flex>;
-};
-
-export { HSeparator, VSeparator };
+  ${media('<=tablet')} {
+    margin: 7.5rem 0;
+  }
+`;
+export default Separator;
