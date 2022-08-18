@@ -1,17 +1,36 @@
 import CustomContainer from 'components/CustomContainer';
 import NextImage from 'next/image';
+import NextLink from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { media } from 'utils/media';
 const PARTNER_LOGOS = [
-    'exen',
-    'kayseriseker',
-    'dirent',
-    'lojik',
-    'qatasoft',
-    'teknokent',
+  {
+    logo:'exen',
+    link:'www.exenmakine.com'
+  },
+  {
+    logo:'kayseriseker',
+    link:'www.kayseriseker.com'
+  },
+  {
+    logo:'dirent',
+    link:'www.direntmimarlik.com'
+  },
+  {
+    logo:'lojik',
+    link:'www.lojikotomasyon.com'
+  },
+  {
+    logo:'teknokent',
+    link:'www.exenmakine.com'
+  },
+  {
+    logo:'qatasoft',
+    link:'www.qatasoft.com'
+  }
   ];
 export default function Partners() {
     return (<PartnersWrapper>
@@ -20,8 +39,10 @@ export default function Partners() {
             768: { slidesPerView: 4 },
             1025: { slidesPerView: 6 },
         }} className="swiper-wrapper">
-        {PARTNER_LOGOS.map((logo) => (<SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo + '.png'} alt={normalizePartnerLogoName(logo)} width={128} height={128}/>
+        {PARTNER_LOGOS.map((company , index) => (<SwiperSlide key={index}>
+            {/* <NextLink href={company.link} locale={false}> */}
+              <NextImage src={'/partners/' + company.logo + '.png'} alt={normalizePartnerLogoName(company.logo)} width={128} height={128}/>
+            {/* </NextLink> */}
           </SwiperSlide>))}
       </Swiper>
     </PartnersWrapper>);

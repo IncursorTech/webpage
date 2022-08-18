@@ -6,7 +6,7 @@ const Feature = ({ title, text, icon }) => {
       <Flex w={8} h={8} my={'auto'} fontSize={'10rem'} align={'center'} justify={'center'} color={'black'} mb={1}>
         {icon}
       </Flex>
-      <Text fontSize={'2xl'} fontWeight={600}>
+      <Text fontSize={'2xl'} fontWeight={600} textTransform={"capitalize"}>
         {title}
       </Text>
       <Text fontSize={'md'} color={'gray.600'}>
@@ -24,28 +24,28 @@ export default function SimpleThreeColumns() {
       <SimpleGrid columns={{ base: 1, sm: 1, md: 2 }} spacing={10}>
         <Feature
           icon={<Icon as={BsFillGearFill} w={10} h={10} />}
-          title={'SİSTEM ENTEGRASYONU'}
+          title={'SYSTEM INTEGRATION'}
           text={`
           LiDAR'lar, kameralar, radarlar, GNSS sistemleri ve Drive by Wire denetleyicileri dahil AV'ler için sensör ve sistem entegrasyonunda deneyim sahibiyiz`}
         />
         <Feature
           icon={<Icon as={BsTerminalFill} w={10} h={10} />}
-          title={'YAZILIM GELİŞTİRME'}
+          title={'SOFTWARE DEVELOPMENT'}
           text={`ADAS, otonom sürüş, haritalama, görüntü işleme ve çok daha fazlası dahil olmak üzere farklı birçok çalışmanızda gömülü yazılım ürünleri geliştirebiliriz.`}
         />
         <Feature
           icon={<Icon as={BsTools} w={10} h={10} />}
-          title={'DONANIM TASARIMI'}
+          title={'HARDWARE DESIGN'}
           text={`Tasarım gereksinimlerinize uygun olarak dokümantasyondan üretime kadar endüstriyel ürün geliştirmeleriniz üzerinde çalışabiliriz.`}
         />
         <Feature
           icon={<Icon as={BsCalculatorFill} w={10} h={10} />}
-          title={'ALGORİTMA GELİŞTİRME'}
+          title={'ALGORITHM DESIGN'}
           text={`Güncel sensör füzyonu teknolojileri ile uygulamalarınızda gelişmiş sonuçlar elde etmeniz için yeni algoritmalar geliştirebilir ve test edebiliriz.`}
         />
         <Feature
           icon={<Icon as={BsFillQuestionSquareFill} w={10} h={10} />}
-          title={'DANIŞMANLIK'}
+          title={'CONSULTANCY'}
           text={`Güncel sensör füzyonu teknolojileri ile uygulamalarınızda gelişmiş sonuçlar elde etmeniz için yeni algoritmalar geliştirebilir ve test edebiliriz.`}
         />
       </SimpleGrid>

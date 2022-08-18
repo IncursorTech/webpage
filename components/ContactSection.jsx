@@ -38,7 +38,7 @@ export default function contact() {
                         _hover={{ border: '2px solid black' }}
                         leftIcon={<MdPhone color="black" size="20px" />}
                       >
-                        +90 507 591 78 17
+                        +90 507 787 06 41
                       </Button>
                       <Button
                         size="md"

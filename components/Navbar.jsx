@@ -173,11 +173,11 @@ const NavItems = [
         href: '/solution',
     },
     {
-        label: 'common:aboutUs',
+        label: 'About Us',
         href: '/about',
     },
     {
-        label: 'common:contact',
+        label: 'Contact',
         href: '/contact',
     },
 ];
