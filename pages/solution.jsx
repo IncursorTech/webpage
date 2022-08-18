@@ -21,8 +21,8 @@ const Card = (props) => {
       </chakra.h2>
       <List spacing={3} p={10} fontSize={'lg'}>
         {items.map((item, index) => (
-          <ListItem>
-            <ListIcon key={index} as={MdCheckCircle} color="black.500" />
+          <ListItem key={index}>
+            <ListIcon as={MdCheckCircle} color="black.500" />
             {item}
           </ListItem>
         ))}

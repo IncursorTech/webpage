@@ -22,6 +22,8 @@ import { BsEyeglasses, BsFillGeoFill, BsPaperclip } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { setNavbarStatic } from 'store/navbarSlice';
 import styled from 'styled-components';
+import Partners from 'views/HomePage/Partners';
+
 export default function ContactPage() {
   const dispatch = useDispatch();
   dispatch(setNavbarStatic(false));
@@ -33,7 +35,7 @@ export default function ContactPage() {
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
             Our Company
           </chakra.h1>
-          <SimpleGrid columns={{ base: 1, sm: 1, md: 1 }} spacing={10}>
+          <SimpleGrid mb={"5rem"} columns={{ base: 1, sm: 1, md: 1 }} spacing={10}>
             <Box border={'2px'} rounded={'lg'} fontSize={'lg'} p={10}>
               <Flex w={8} h={8} my={'auto'} fontSize={'10rem'} align={'center'} justify={'center'} color={'black'} mb={1}>
                 <Icon as={BsFillGeoFill} w={10} h={10} />
@@ -72,6 +74,10 @@ export default function ContactPage() {
               <chakra.p>Robotic - BlockChain</chakra.p>
             </Box>
           </SimpleGrid>
+          <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
+           Offical Partners / Referance
+          </chakra.h1>
+          <Partners/>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
             Join Our Team
           </chakra.h1>
@@ -128,6 +134,7 @@ export default function ContactPage() {
             </SimpleGrid>
           </Box>
         </InsideContainer>
+        
       </AboutUsContainer>
       <Footer />
     </>
@@ -151,4 +158,5 @@ const AboutUsContainer = styled.div`
 `;
 const InsideContainer = styled(CustomContainer)`
   max-width: 150em;
+  margin-bottom: 5rem;
 `;

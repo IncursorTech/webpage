@@ -4,7 +4,7 @@ import { useScrollPosition } from 'hooks/useScrollPosition';
 import { useTranslation } from 'next-i18next';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { media } from 'utils/media';
@@ -19,16 +19,6 @@ export default function WithSubnavigation() {
     const lastScrollY = useRef(0);
     const lastRoute = useRef('');
     const stepSize = useRef(50);
-    const [planDetails, setPlanDetails] = useState({});
-    const { isOpen: isPlanDetailsSidebarOpen, onOpen: onPlanDetailsSidebarOpen, onClose: onPlanDetailsSidebarClose } = useDisclosure();
-    const planDetailsButtonRef = useRef();
-    useEffect(() => {
-        const planDetails = localStorage.getItem('planDetails');
-        if (planDetails) {
-            const planDetailsObj = JSON.parse(planDetails);
-            setPlanDetails(planDetailsObj);
-        }
-    }, []);
     const scrollPositionCallback = ({ currPos }) => {
         const routerPath = router.asPath;
         const hasRouteChanged = routerPath !== lastRoute.current;
@@ -38,7 +28,6 @@ export default function WithSubnavigation() {
             return;
         }
         const currentScrollY = currPos.y;
-        const isScrollingUp = currentScrollY > lastScrollY.current;
         const scrollDifference = Math.abs(lastScrollY.current - currentScrollY);
         const hasScrolledWholeStep = scrollDifference >= stepSize.current;
         const isInNonCollapsibleArea = lastScrollY.current > -50;
@@ -56,7 +45,7 @@ export default function WithSubnavigation() {
     };
     useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50);
     const isNavbarHidden = scrollingDirection === 'up';
-    const isTransparent = scrollingDirection === 'none';
+    // const isTransparent = scrollingDirection === 'none';
     const handleLocaleChange = (event) => {
         const { value } = event.target;
         router.push(router.route, router.asPath, {

@@ -17,7 +17,7 @@ const Feature = ({ title, text, icon }) => {
 };
 export default function SimpleThreeColumns() {
   return (
-    <Box maxW="150em" mx={'auto'} pb={5} px={{ base: 2, sm: 12, md: 17 }}>
+    <Box maxW="150em" mb={"10rem"} mx={'auto'} pb={5} px={{ base: 2, sm: 12, md: 17 }}>
       <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'5rem'} fontWeight={'bold'}>
         Our services
       </chakra.h1>
