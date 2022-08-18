@@ -1,6 +1,6 @@
+import { EnvVars } from 'env';
 import Head from 'next/head';
 import styled from 'styled-components';
-import { EnvVars } from 'env';
 import { media } from 'utils/media';
 import CustomContainer from './CustomContainer';
 import SectionTitle from './SectionTitle';

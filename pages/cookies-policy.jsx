@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import Page from 'components/Page';
 import RichText from 'components/RichText';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import styled from 'styled-components';
 export default function ContactPage() {
     return (<Page title="Cookies policy">
       <CookiesPolicyContainer>

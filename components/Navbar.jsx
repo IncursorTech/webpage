@@ -102,12 +102,14 @@ const DesktopNav = ({ t }) => {
       {NavItems.map((navItem) => (<Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
-              <Link p={2} href={navItem.href ?? '#'} fontSize={'xl'} fontWeight={400} color={linkColor} _hover={{
+              <NextLink href={navItem.href ?? '#'} passHref>
+              <Text p={2} cursor={"pointer"} fontSize={'xl'} fontWeight={400} color={linkColor} _hover={{
                 textDecoration: 'none',
                 color: linkHoverColor,
             }}>
                 {t(navItem.label)}
-              </Link>
+              </Text>
+              </NextLink>
             </PopoverTrigger>
 
             {navItem.children && (<PopoverContent border={0} boxShadow={'xl'} bg={popoverContentBgColor} p={4} rounded={'xl'} minW={'sm'}>

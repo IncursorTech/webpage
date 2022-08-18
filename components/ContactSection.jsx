@@ -16,6 +16,7 @@ import {
   Textarea,
   VStack,
 } from '@chakra-ui/react';
+import NextLink from 'next/link'
 import { BsDiscord, BsGithub, BsPerson } from 'react-icons/bs';
 import { MdEmail, MdFacebook, MdLocationOn, MdOutlineEmail, MdPhone } from 'react-icons/md';
 export default function contact() {
@@ -30,16 +31,18 @@ export default function contact() {
                   <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                     <Heading>Contact</Heading>
                     <VStack pl={0} spacing={3} alignItems="flex-start">
-                      <Button
-                        size="md"
-                        height="48px"
-                        width="200px"
-                        variant="ghost"
-                        _hover={{ border: '2px solid black' }}
-                        leftIcon={<MdPhone color="black" size="20px" />}
-                      >
-                        +90 507 787 06 41
-                      </Button>
+                      <NextLink href={"/yunusyilmaz.vcf"} passHref>
+                        <Button
+                          size="md"
+                          height="48px"
+                          width="200px"
+                          variant="ghost"
+                          _hover={{ border: '2px solid black' }}
+                          leftIcon={<MdPhone color="black" size="20px" />}
+                        >
+                          +90 507 787 06 41
+                        </Button>
+                      </NextLink>
                       <Button
                         size="md"
                         height="48px"
