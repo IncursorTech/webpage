@@ -1,6 +1,8 @@
 import { Box, chakra, Container, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import styled from 'styled-components';
+import { media } from 'utils/media';
+
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={'500'} fontSize={'2xl'} mb={2} color={'black'}>
@@ -32,9 +34,9 @@ const SocialButton = ({ children, label, href }) => {
 };
 export default function LargeWithLogoLeft() {
   return (
-    <Box bg={'url(background-3.png)'} color={useColorModeValue('gray.700', 'gray.200')}>
+    <Box bg={'url(background-3.png)'} bgPosition={{base:"right" , md:"center"}} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'170em'} py={10}>
-        <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr' }} spacing={8}>
+        <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr' }} spacing={8}>
           <Stack spacing={6} justifyContent={'center'} borderRight={'2px'} borderColor={'rgba(255 , 255 , 255 , 0.2)'} padding={'2rem'}>
             <Box display={'flex'} justifyContent={'center'}>
               <Logo />
@@ -54,30 +56,24 @@ export default function LargeWithLogoLeft() {
               © Copyright 2022 inCursor Tech
             </Text>
           </Stack>
-          <Stack paddingTop={'50%'} align={'center'} fontSize={'lg'} color={'black'}>
-            <ListHeader>Product</ListHeader>
-            <Link href={'#'}>Overview</Link>
-            <Link href={'#'}>Features</Link>
-            <Link href={'#'}>Tutorials</Link>
-            <Link href={'#'}>Pricing</Link>
-            <Link href={'#'}>Releases</Link>
-          </Stack>
-          <Stack paddingTop={'50%'} align={'center'} fontSize={'lg'} color={'black'}>
-            <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Press</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact</Link>
-            <Link href={'#'}>Partners</Link>
-          </Stack>
-          <Stack paddingTop={'50%'} align={'center'} fontSize={'lg'} color={'black'}>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Legal</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Status</Link>
-          </Stack>
+          <SimpleGrid columns={{ base: 2, sm: 2, md: 2 }}>
+              <Stack paddingTop={{ base: '2rem', sm: '50%', md: '50%' }} align={'center'} fontSize={'lg'} color={'black'}>
+                <ListHeader>Company</ListHeader>
+                <Link href={'#'}>About</Link>
+                <Link href={'#'}>Press</Link>
+                <Link href={'#'}>Careers</Link>
+                <Link href={'#'}>Contact</Link>
+                <Link href={'#'}>Partners</Link>
+              </Stack>
+              <Stack paddingTop={{ base: '2rem', sm: '50%', md: '50%' }} align={'center'} fontSize={'lg'} color={'black'}>
+                <ListHeader>Support</ListHeader>
+                <Link href={'#'}>Help Center</Link>
+                <Link href={'#'}>Terms of Service</Link>
+                <Link href={'#'}>Legal</Link>
+                <Link href={'#'}>Privacy Policy</Link>
+                <Link href={'#'}>Status</Link>
+              </Stack>
+            </SimpleGrid>
         </SimpleGrid>
       </Container>
     </Box>
@@ -91,4 +87,7 @@ const Logo = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  ${media('<=tablet')} {
+    margin-bottom: 0rem;
+  }
 `;

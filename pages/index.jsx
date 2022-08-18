@@ -1,38 +1,19 @@
+import CustomContainer from 'components/CustomContainer';
+import Features from 'components/Features';
+import Footer from 'components/FooterChakra';
+import Statics from 'components/Statics';
+import { EnvVars } from 'env';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
-import Footer from 'components/FooterChakra';
-import Features from 'components/Features';
-import Statics from 'components/Statics';
-import { EnvVars } from 'env';
 import { setNavbarStatic } from 'store/navbarSlice';
+import styled from 'styled-components';
 import { media } from 'utils/media';
 import { getAllPosts } from 'utils/posts-fetcher';
 import Hero from 'views/HomePage/Hero';
-import CustomContainer from 'components/CustomContainer';
-import { useState } from 'react';
-const sectionItems = [
-    {
-        imageURL: '/Turkey/5a055e83ae7849206ce37903.jpg',
-        title: 'Anatolian Geography',
-        text: 'Since ancient times, Anatolian Geography has been a healthcare base with its thermal springs, historical hospitals, traditional and complementary medicine expertise.',
-        reversed: false,
-    },
-    {
-        imageURL: '/Turkey/galata-tower-istanbul-night.jpg',
-        title: 'Turkish Health System',
-        text: 'The Turkish Health System completely evolved with advanced medical technology in the structure of the modern Republic of Türkiye and world-class modern medical education, reached its peak with the national “Health Transformation Program” initiated in 2003. With the individual-oriented “Health Transformation Program”, the main purpose of which can be summarized as ‘‘Providing accessible, qualified and sustainable health services in an effective, high-quality and efficient way for everyone” Türkiye preserves its accomplishment of being among the top countries that are preferred by citizens all around the world.',
-        reversed: true,
-    },
-    {
-        imageURL: '/Turkey/kapadokya-balon-turu.jpg',
-        title: 'Global Healthcare services',
-        text: 'Türkiye is among the first with a high number of health institutions accredited by the independent international accreditation body JCI, which is accepted as the gold standard in global healthcare services. At the same time, all health institutions providing healthcare services in Türkiye are subject to national SKS health quality accreditation inspections focused on patient care quality and patient safety implemented by the Ministry of Health. TÜSKA, Türkiye’s official accreditation brand in healthcare, is approved by the International Society for Quality in Health Care (ISQua), the top organization regarding accreditation in the field of healthcare around the globe.',
-        reversed: false,
-    },
-];
+
 export default function Homepage({ posts }) {
     const dispatch = useDispatch();
     const { locale } = useRouter();
@@ -43,46 +24,7 @@ export default function Homepage({ posts }) {
         console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
         isVisible ? setButtonHeight('400px') : setButtonHeight('100px');
     };
-    const AccordionItems = [
-        {
-            title: 'Nasıl başlayabilirim?',
-            description: `En basit ve en hızlı yol bir soruşturma göndermektir. Vakanızı hazırlayacak, birden fazla doktor ve hastane ile paylaşacak
-      ve bir tedavi planı, tedavi maliyeti ve diğer yararlı bilgilerle size geri dönecek bir hasta ilişkileri yöneticisi size
-      atanır.`,
-        },
-        {
-            title: `Ne kadar tasarruf ederim?`,
-            description: `Tasarruf, prosedüre ve varış yerine bağlı olarak% 30-90 arasında olabilir.`,
-        },
-        {
-            title: `Maliyetle ilgili herhangi bir tahmin var mı?`,
-            description: `Tıbbi geçmişiniz ve raporlarınız da dahil olmak üzere mevcut durumunuzu sağladıktan sonra, bilgiler bağlı hastanelerin
-      uzmanları tarafından gözden geçirilecek ve incelenecek, buna göre tedavinizin toplam tahmini ile size geri dönecektir.`,
-        },
-        {
-            title: `Neden bu kadar ucuza mal oluyor?`,
-            description: `Maliyetteki fark, kalite eksikliğinden değil, işçilik ve sigorta maliyetlerinden kaynaklanmaktadır. Türkiye ayrıca ABD
-      Doları ile uygun bir döviz kuruna sahiptir ve bu da maliyetleri düşürmeye yardımcı olur.`,
-        },
-        {
-            title: `Doktorlar ve sağlık personeli İngilizce biliyor mu?`,
-            description: `Tüm ortak hastanelerimiz akıcı İngilizce konuşan personele sahiptir. Fransızca, Arapça, Rusça, İspanyolca konuşan
-      hastalara hizmet vermek için tercümanlarımız var. "Özel gereksinimim" var Bizimle istişarede bulunduktan sonra, mümkün
-      olan tüm özel gereksinimleri karşılayacağız. Lütfen sizin için uygun düzenlemeleri yapabilmemiz için bize bu tür
-      gereklilikleri bildirin.`,
-        },
-        {
-            title: `Doğrudan hastaneyle ilgilenirsem, tıbbi masraflarım daha az maliyetli olur mu?`,
-            description: ` Bizden aldığınız fiyat doğrudan hastaneden, indirimli ve en düşük seviyede. Hizmetlerini pazarlamak ve hastalarına yıl
-      boyunca hizmet vermek için hastaneden ücret alıyoruz. MCT'nin faydaları hakkında daha fazla bilgi edinin.`,
-        },
-        {
-            title: `Hangi prosedürler mevcuttur?`,
-            description: `Türkiye, en basit prosedürlerden karmaşık prosedürlere kadar dünya standartlarında doktorlara ve olanaklara sahiptir. Ele
-      aldığımız yaygın prosedürler Kanser, Diz ve Kalça Replasmanları, Kemik, Omurga, Kalp, Göz, Doğurganlık, Böbrek ve Genel
-      Sağlık Kontrolleridir.`,
-        },
-    ];
+    
     return (<>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>

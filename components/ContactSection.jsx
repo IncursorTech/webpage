@@ -80,11 +80,11 @@ export default function contact() {
                   <VStack spacing={5}>
                     <FormControl id="name">
                       <FormLabel>Your Name</FormLabel>
-                      <InputGroup borderColor="#E0E1E7">
+                      <InputGroup  borderColor="#E0E1E7">
                         <InputLeftElement pointerEvents="none">
                           <BsPerson color="gray.800" />
                         </InputLeftElement>
-                        <Input type="text" size="md" />
+                        <Input size="lg" type="text" border={"1px"} borderColor={"rgba(0 , 0 ,0 ,0.2)"}/>
                       </InputGroup>
                     </FormControl>
                     <FormControl id="name">
@@ -93,13 +93,13 @@ export default function contact() {
                         <InputLeftElement pointerEvents="none">
                           <MdOutlineEmail color="gray.800" />
                         </InputLeftElement>
-                        <Input type="text" size="md" />
+                        <Input type="text" size="lg" border={"1px"} borderColor={"rgba(0 , 0 ,0 ,0.2)"}/>
                       </InputGroup>
                     </FormControl>
                     <FormControl id="name">
                       <FormLabel>Message</FormLabel>
                       <Textarea
-                        borderColor="gray.300"
+                        border={"1px"} borderColor={"rgba(0 , 0 ,0 ,0.2)"}
                         _hover={{
                           borderRadius: 'gray.300',
                         }}
@@ -107,7 +107,7 @@ export default function contact() {
                       />
                     </FormControl>
                     <FormControl id="name" float="right">
-                      <Button variant="solid" bg="none" border={'1px'} color="black" _hover={{}}>
+                      <Button size={"lg"} variant="solid" bg="none" border={'1px'} color="black" _hover={{}}>
                         Send Message
                       </Button>
                     </FormControl>

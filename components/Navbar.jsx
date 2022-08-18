@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { media } from 'utils/media';
+
 export default function WithSubnavigation() {
     // const { isAuthenticated } = useAuthContext();
     const { isOpen, onToggle } = useDisclosure();
@@ -70,7 +72,7 @@ export default function WithSubnavigation() {
             </div>
           </NextLink>
           <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
-            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3}/> : <HamburgerIcon color={'white'} w={18} h={18}/>} variant={'ghost'} aria-label={'Toggle Navigation'}/>
+            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3}/> : <HamburgerIcon color={'black'} w={18} h={18}/>} variant={'ghost'} aria-label={'Toggle Navigation'}/>
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
             <Flex display={{ base: 'none', md: 'flex' }}>
@@ -145,21 +147,21 @@ const DesktopSubNav = ({ t, label, href, subLabel }) => {
 };
 const MobileNav = () => {
     console.count('MobileNav');
-    return (<Stack bg={useColorModeValue('black', 'gray.800')} p={4} display={{ md: 'none' }}>
-      {NavItems.map((navItem, i) => (<MobileNavItem key={i} {...navItem}/>))}
+    return (<Stack bg={"#ebecec"} p={4} fontSize={"2rem"} display={{ md: 'none' } } >
+      {NavItems.map((navItem, i) => (<MobileNavItem  key={i} {...navItem}/>))}
     </Stack>);
 };
 const MobileNavItem = ({ label, children, href }) => {
     const { isOpen, onToggle } = useDisclosure();
     const { t } = useTranslation('navbar');
-    return (<Stack spacing={4} onClick={children && onToggle}>
+    return (<Stack spacing={4}  onClick={children && onToggle}>
       <Flex py={2} as={Link} href={href ?? '#'} justify={'space-between'} align={'center'} _hover={{
             textDecoration: 'none',
         }}>
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+        <Text fontWeight={600}  color={useColorModeValue('gray.600', 'gray.200')}>
           {t(label)}
         </Text>
-        {children && (<Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6}/>)}
+        {children && (<Icon as={ChevronDownIcon} fill={"white"} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6}/>)}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
@@ -175,7 +177,7 @@ const MobileNavItem = ({ label, children, href }) => {
 const NavItems = [
     {
         label: 'Home',
-        href: '/plan-treatment',
+        href: '/#',
     },
     {
         label: 'Solution',
@@ -212,4 +214,8 @@ const LogoWrapper = styled.div `
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  ${media('<=tablet')} {
+    top: -6px;
+    left: 20%;
+  }
 `;

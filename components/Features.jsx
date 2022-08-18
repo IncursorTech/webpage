@@ -21,7 +21,7 @@ export default function SimpleThreeColumns() {
       <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'5rem'} fontWeight={'bold'}>
         Our services
       </chakra.h1>
-      <SimpleGrid columns={{ base: 3, sm: 1, md: 2 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, sm: 1, md: 2 }} spacing={10}>
         <Feature
           icon={<Icon as={BsFillGearFill} w={10} h={10} />}
           title={'SİSTEM ENTEGRASYONU'}

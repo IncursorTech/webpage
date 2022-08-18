@@ -33,7 +33,7 @@ export default function ContactPage() {
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
             Our Company
           </chakra.h1>
-          <SimpleGrid columns={{ base: 3, sm: 1, md: 1 }} spacing={10}>
+          <SimpleGrid columns={{ base: 1, sm: 1, md: 1 }} spacing={10}>
             <Box border={'2px'} rounded={'lg'} fontSize={'lg'} p={10}>
               <Flex w={8} h={8} my={'auto'} fontSize={'10rem'} align={'center'} justify={'center'} color={'black'} mb={1}>
                 <Icon as={BsFillGeoFill} w={10} h={10} />
@@ -76,7 +76,7 @@ export default function ContactPage() {
             Join Our Team
           </chakra.h1>
           <Box border={'2px'} rounded={'lg'} fontSize={'lg'} p={10}>
-            <SimpleGrid columns={{ base: 3, sm: 1, md: 2 }} spacing={10}>
+            <SimpleGrid columns={{ base: 1, sm: 1, md: 2 }} spacing={10}>
               <Input placeholder="name" size="lg" border={'1px'} borderColor={'black'} height={'4rem'} />
               <Input placeholder="surname" size="lg" border={'1px'} borderColor={'black'} height={'4rem'} />
               <Input placeholder="e-mail" size="lg" border={'1px'} borderColor={'black'} height={'4rem'} />
@@ -93,11 +93,11 @@ export default function ContactPage() {
               </FormControl>
             </SimpleGrid>
             <Textarea placeholder="your message" border={'1px'} borderColor={'black'} mt={'2rem'} height={'7rem'} />
-            <SimpleGrid columns={{ base: 3, sm: 1, md: 1 }} spacing={10}>
-              <Checkbox size={'lg'} borderColor={'black'} mt={'2rem'} colorScheme="green">
-                I accept the protection of my personal data.
+            <SimpleGrid columns={{ base: 1, sm: 1, md: 1 }} spacing={10}>
+              <Checkbox size={'lg'} borderColor={'black'}  mt={'2rem'} colorScheme="black">
+                <chakra.p fontSize={{base:"sm" , md:"md"}}> I accept the protection of my personal data.</chakra.p>
               </Checkbox>
-              <SimpleGrid columns={{ base: 3, sm: 1, md: 2 }} spacing={10}>
+              <SimpleGrid columns={{ base: 2, sm: 1, md: 2 }} spacing={10}>
                 <ButtonGroup>
                   <Button
                     leftIcon={<BsPaperclip />}

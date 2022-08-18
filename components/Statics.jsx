@@ -82,19 +82,18 @@ function StatsCard(props) {
 export default function BasicStatistics() {
   return (
     <Box maxW="150em" mx={'auto'} pb={5} px={{ base: 2, sm: 12, md: 17 }}>
-      <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} fontWeight={'bold'} mb={'5rem'}>
+      <chakra.h1 textAlign={'left'} fontSize={{base: "2xl" , sm: "3xl", md:"4xl"}} py={10} fontWeight={'bold'} mb={'5rem'}>
         Our company is expanding, you could be too.
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 5 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid columns={{ base: 2, md: 5 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'Headcount'}
           stat={'13'}
           icon={<IoIosPeople size={'5em'} popoverContent={'There are 5 engineers and 8 technical personnel in our company.'} />}
         />
-        <StatsCard title={'Engineering Branch'} stat={'5'} icon={<IoIosRibbon size={'5em'} />} />
+        <StatsCard title={'Eng. Branch'} stat={'5'} icon={<IoIosRibbon size={'5em'} />} />
         <StatsCard title={'Location'} stat={'2'} icon={<GoLocation size={'5em'} />} />
         <StatsCard title={'Partnership'} stat={'5'} icon={<IoMdPeople size={'5em'} />} />
-        <StatsCard title={'Project'} stat={'7'} icon={<IoIosDocument size={'5em'} />} />
       </SimpleGrid>
     </Box>
   );

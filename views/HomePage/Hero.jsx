@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { heartBeat } from 'styles/Animation';
-import CustomContainer from 'components/CustomContainer';
+import { media } from 'utils/media';
 // import { Input, Button as ChakraButton, ButtonGroup as ChakraButtonGroup } from '@chakra-ui/react';
 export default function Hero() {
     // const { setIsModalOpened } = useNewsletterModalContext();
@@ -12,16 +11,7 @@ export default function Hero() {
       </div>
     </BackGround>);
 }
-const Container = styled(CustomContainer) `
-  width: 190em;
-`;
-const transparency = styled.div `
-  position: absoult;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
+
 const BackGround = styled.div `
   padding: 5rem;
   background-image: url(/inCursor.png);
@@ -29,14 +19,9 @@ const BackGround = styled.div `
   background-size: cover;
   background-position: top;
   height: 100vh;
-`;
-const Logo = styled.div `
-  animation: ${heartBeat} 2s linear;
-  background-image: url(/inCursor-logo.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50rem;
-  width: inherit;
+  ${media('<=tablet')} {
+    padding: 0rem;
+  }
 `;
 const Heading = styled.div `
   transform: skewY(21deg);
@@ -45,4 +30,14 @@ const Heading = styled.div `
   font-size: 7.2rem;
   letter-spacing: -0.05em;
   color: black;
+  ${media('<=tablet')} {
+  margin-top: 0px;
+    letter-spacing: 0em;
+    width: 100vh;
+    margin:auto;
+    background-color: rgba(0 ,0 , 0,0.9);
+    transform: translateX(50%) rotate(90deg);
+    font-size: 2rem;
+    color: white;
+  }
 `;
