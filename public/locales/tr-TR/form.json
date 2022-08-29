@@ -1,0 +1,14 @@
+{
+    "name":"adınız",
+    "surname":"soyadınız",
+    "mail":"e-mail",
+    "mobile":"telefon",
+    "subject":"konu seçin",
+    "sales":"satış ve ürün bilgileri",
+    "technical": "teknik destek",
+    "partnership":"partnership sponsorship distributorship",
+    "other":"diğer",
+    "data":"Kişisel verilerimin korunmasını kabul ediyorum.",
+    "send":"Gönder",
+    "placeholder": "Lütfen mesajınızı buraya yazın"
+}

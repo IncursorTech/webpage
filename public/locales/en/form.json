@@ -1,0 +1,14 @@
+{
+    "name":"name",
+    "surname":"surname",
+    "mail":"e-mail",
+    "mobile":"mobile",
+    "subject":"subject selection",
+    "sales":"sales and product information",
+    "technical": "technical support",
+    "partnership":"partnership sponsorship distributorship",
+    "other":"other",
+    "data":"I accept the protection of my personal data.",
+    "send":"Send",
+    "placeholder": "Please write your message here"
+}

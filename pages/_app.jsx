@@ -4,13 +4,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { StepsStyleConfig as Steps } from 'chakra-ui-steps';
+import Footer from 'components/FooterChakra';
 import { GlobalStyle } from 'components/GlobalStyles';
 import AuthContextProvider from 'contexts/auth.context';
 import { appWithTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { ColorModeScript } from 'nextjs-color-mode';
-import React, { useState } from 'react';
 import { CookiesProvider } from 'react-cookie';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux';
@@ -35,7 +35,7 @@ const theme = extendTheme({
     },
 });
 function Root({ Component, pageProps }) {
-    const [authorized, setAuthorized] = useState(false);
+    // const [authorized, setAuthorized] = useState(false);
     return (<>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -62,6 +62,7 @@ function Root({ Component, pageProps }) {
               {/* <RouteGuard> */}
               <Component {...pageProps}/>
               {/* </RouteGuard> */}
+              <Footer/>
             </CookiesProvider>
           </ChakraProvider>
         </AuthContextProvider>

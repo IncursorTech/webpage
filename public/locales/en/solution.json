@@ -1,0 +1,184 @@
+{
+    "software":
+    {
+        "header":"Software",
+        "cards":
+        {
+            "section-1":{
+                "header":"Web/Mobil/Desktop",
+                "subtitle":{
+                    "title-1":"Health Assistant",
+                    "title-2":"Business Intelligence Applications",
+                    "title-3":"Crypto Bots",
+                    "title-4":"Data Collection Software"
+                }
+            },
+            "section-2":{
+                "header":"AR/MR",
+                "subtitle":{
+                    "title-1":"Digital Education Classes",
+                    "title-2":"Industrial Plant Applications"
+                }
+            },
+            "section-3":{
+                "header":"Robotic",
+                "subtitle":{
+                    "title-1":"Agricultural Robots",
+                    "title-2":"Military View",
+                    "title-3":"AGV Vehicle Systems",
+                    "title-4":"Image Processing"
+                }
+            },
+            "section-4":{
+                "header":"Embedded",
+                "subtitle":{
+                    "title-1":"Battery Management Systems",
+                    "title-2":"Engine Control Systems",
+                    "title-3":"Solar Panel Data Display",
+                    "title-4":"Communication Applications"
+                }
+            }
+        }
+    },
+    "electronic":
+    {
+        "header":"Electronics",
+        "cards":
+        {
+            "section-1":{
+                "header":"Industrial PLC",
+                "subtitle":{
+                    "title-1":"Industrial Applications",
+                    "title-2":"Quality Control Systems",
+                    "title-3":"Product Testers",
+                    "title-4":"",
+                    "title-5":""
+                }
+            },
+            "section-2":{
+                "header":"Embedded",
+                "subtitle":{
+                    "title-1":"Multilayer PCB Design",
+                    "title-2":"IOT Hardware Designs",
+                    "title-3":"Analog and Digital Circuit Designs",
+                    "title-4":"Image Processing",
+                    "title-5":""
+                }
+            },
+            "section-3":{
+                "header":"Power Electronics",
+                "subtitle":{
+                    "title-1":"Blade(with/without) Motor Control Systems",
+                    "title-2":"Solar Tracking Systems(GES)",
+                    "title-3":"Power Led Drivers",
+                    "title-4":"Battery Management Systems",
+                    "title-5":""
+                }
+            },
+            "section-4":{
+                "header":"",
+                "subtitle":{
+                    "title-1":"",
+                    "title-2":"",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            }
+        }
+    },
+    "modelling":
+    {
+        "header":"Modelling",
+        "cards":
+        {
+            "section-1":{
+                "header":"3D",
+                "subtitle":{
+                    "title-1":"ICA Concept Designs",
+                     "title-2":"Industrial System",
+                     "title-3":"Render and Mock-up Product",
+                     "title-4":"Game contents",
+                    "title-5":""
+                }
+            },
+            "section-2":{
+                "header":"2D",
+                "subtitle":{
+                    "title-1":"UI / UX Designs",
+                    "title-2":"Corporate Identity",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            },
+            "section-3":{
+                "header":"",
+                "subtitle":{
+                    "title-1":"",
+                    "title-2":"",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            },
+            "section-4":{
+                "header":"",
+                "subtitle":{
+                    "title-1":"",
+                    "title-2":"",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            }
+        }
+    },
+    "consultancy":
+    {
+        "header":"Consultancy",
+        "cards":
+        {
+            "section-1":{
+                "header":"General",
+                "subtitle":{
+                    "title-1":"Electronic / Mechanical Production",
+                    "title-2":"Training Equipment",
+                    "title-3":"Science Centers",
+                    "title-4":"ISO",
+                    "title-5":"TUBITAK / KOSGEB"
+                }
+            },
+            "section-2":{
+                "header":"Military",
+                "subtitle":{
+                    "title-1":"Ammunition supply from the world's leading manufacturers through representation and distributorship",
+                    "title-2":"",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            },
+            "section-3":{
+                "header":"",
+                "subtitle":{
+                    "title-1":"",
+                    "title-2":"",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            },
+            "section-4":{
+                "header":"",
+                "subtitle":{
+                    "title-1":"",
+                    "title-2":"",
+                    "title-3":"",
+                    "title-4":"",
+                    "title-5":""
+                }
+            }
+        }
+    }
+}

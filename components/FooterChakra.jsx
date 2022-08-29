@@ -1,7 +1,5 @@
-import { Box, chakra, Container, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import styled from 'styled-components';
-import { media } from 'utils/media';
+import { Box, Container, Image, Link, SimpleGrid, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { useTranslation } from 'next-i18next';
 
 const ListHeader = ({ children }) => {
   return (
@@ -10,68 +8,35 @@ const ListHeader = ({ children }) => {
     </Text>
   );
 };
-const SocialButton = ({ children, label, href }) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'blackAlpha.100')}
-      rounded={'full'}
-      fontSize={'5xl'}
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'blackAlpha.200'),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  );
-};
+
 export default function LargeWithLogoLeft() {
+  const { t } = useTranslation('footer');
   return (
-    <Box bg={'url(background-3.png)'} bgPosition={{base:"right" , md:"center"}} color={useColorModeValue('gray.700', 'gray.200')}>
+    <Box bg={'url(background-3.png)'} bgRepeat={"no-repeat"} bgSize={"cover"} bgPosition={{base:"right" , md:"center"}} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'170em'} py={10}>
-        <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr' }} spacing={8}>
+        <SimpleGrid templateColumns={{ base:'1fr' ,sm: '1fr', md: '1fr 4fr' }} spacing={8}>
           <Stack spacing={6} justifyContent={'center'} borderRight={'2px'} borderColor={'rgba(255 , 255 , 255 , 0.2)'} padding={'2rem'}>
-            <Box display={'flex'} justifyContent={'center'}>
-              <Logo />
+            <Box display={'flex'} justifyContent={'center'} p={{base: "7rem" ,sm: "7rem" , md:"0"}}>
+              <Image src={"incursor-logo.png"} alt="logo" objectFit="contain" pb={5} rounded={"lg"}/> 
             </Box>
-            <Stack direction={'row'} spacing={6} display={'flex'} justifyContent={'center'}>
-              <SocialButton label={'Twitter'} href={'#'}>
-                <FaTwitter color="black" />
-              </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
-                <FaYoutube color="black" />
-              </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
-                <FaInstagram color="black" />
-              </SocialButton>
-            </Stack>
             <Text fontSize={'md'} textColor={'black'} display={'flex'} justifyContent={'center'}>
-              © Copyright 2022 inCursor Tech
+              © 2022<Link href={'/'} ml={2}>inCursor</Link>
             </Text>
           </Stack>
-          <SimpleGrid columns={{ base: 2, sm: 2, md: 2 }}>
-              <Stack paddingTop={{ base: '2rem', sm: '50%', md: '50%' }} align={'center'} fontSize={'lg'} color={'black'}>
-                <ListHeader>Company</ListHeader>
-                <Link href={'#'}>About</Link>
-                <Link href={'#'}>Press</Link>
-                <Link href={'#'}>Careers</Link>
-                <Link href={'#'}>Contact</Link>
-                <Link href={'#'}>Partners</Link>
+          <SimpleGrid columns={{ base: 2, sm: 2, md: 2 }} p={5}>
+              <Stack  align={{ base:'center' ,sm: 'center', lg: 'left' }} fontSize={'lg'} color={'black'}>
+                <ListHeader>{t("footer:company")}</ListHeader>
+                <Link href={'/'}>{t("footer:home")}</Link>
+                <Link href={'/solution'}>{t("footer:solution")}</Link>
+                <Link href={'/about'}>{t("footer:about")}</Link>
+                <Link href={'/contact'}>{t("footer:contact")}</Link>
               </Stack>
-              <Stack paddingTop={{ base: '2rem', sm: '50%', md: '50%' }} align={'center'} fontSize={'lg'} color={'black'}>
-                <ListHeader>Support</ListHeader>
-                <Link href={'#'}>Help Center</Link>
-                <Link href={'#'}>Terms of Service</Link>
-                <Link href={'#'}>Legal</Link>
-                <Link href={'#'}>Privacy Policy</Link>
-                <Link href={'#'}>Status</Link>
+              <Stack  align={{ base:'center' ,sm: 'center', lg: 'left' }} fontSize={'lg'} color={'black'}>
+                <ListHeader>{t("footer:support")}</ListHeader>
+                <Link href={'#'}>{t("footer:service")}</Link>
+                <Link href={'#'}>{t("footer:legal")}</Link>
+                <Link href={'#'}>{t("footer:privacy")}</Link>
+                <Link href={'#'}>{t("footer:status")}</Link>
               </Stack>
             </SimpleGrid>
         </SimpleGrid>
@@ -79,15 +44,4 @@ export default function LargeWithLogoLeft() {
     </Box>
   );
 }
-const Logo = styled.div`
-  background-image: url(incursor-logo.png);
-  height: 20rem;
-  width: 20rem;
-  margin-bottom: 5rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  ${media('<=tablet')} {
-    margin-bottom: 0rem;
-  }
-`;
+

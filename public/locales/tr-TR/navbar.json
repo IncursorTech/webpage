@@ -1,14 +1,7 @@
 {
-  "treatments": "Tedaviler",
-  "doctors": "Doktorlar",
-  "generalSurgery": "Genel Cerrahi",
-  "orthopedics": "Ortopedi",
-  "transplantation": "İlaçlar",
-  "oncology": "Onkoloji",
-  "surgeryOncology": "Cerrahi Onkoloji",
-  "neurology": "Neurologi",
-  "radiationOncology": "Radyasyon Onkoloji",
-  "eye": "Göz",
-  "aestheticsPlastic": "Estetik & Plastik",
-  "destinations": "Hastaneler"
-}
+  "company": "Company",
+  "about": "Hakkımızda",
+  "contact": "İletişim",
+  "solution": "Çözümlerimiz",
+  "home" : "Başlangıç"
+  }

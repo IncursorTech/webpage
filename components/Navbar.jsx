@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronRightIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Collapse, Flex, Icon, IconButton, Link, Popover, PopoverContent, PopoverTrigger, Select, Stack, Text, useColorModeValue, useDisclosure, } from '@chakra-ui/react';
+import { Box, Collapse, Flex,HStack, Icon, IconButton, Link, Popover, PopoverContent, PopoverTrigger, Select, SimpleGrid
+  ,Stack, Text, useColorModeValue, useDisclosure} from '@chakra-ui/react';
 import { useScrollPosition } from 'hooks/useScrollPosition';
 import { useTranslation } from 'next-i18next';
 import NextLink from 'next/link';
@@ -7,12 +8,11 @@ import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { media } from 'utils/media';
 
 export default function WithSubnavigation() {
     // const { isAuthenticated } = useAuthContext();
     const { isOpen, onToggle } = useDisclosure();
-    const { t } = useTranslation('navbar, common, countries');
+    const { t } = useTranslation('navbar');
     const navbarSelector = useSelector((storeState) => storeState.navbarState);
     const [scrollingDirection, setScrollingDirection] = useState('none');
     const router = useRouter();
@@ -40,51 +40,93 @@ export default function WithSubnavigation() {
             lastScrollY.current = currentScrollY;
             return;
         }
-        setScrollingDirection(currPos.y <= -200 ? 'up' : 'down');
+        setScrollingDirection(currPos.y <= -10 ? 'up' : 'down');
         lastScrollY.current = currentScrollY;
     };
     useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50);
     const isNavbarHidden = scrollingDirection === 'up';
-    // const isTransparent = scrollingDirection === 'none';
     const handleLocaleChange = (event) => {
-        const { value } = event.target;
-        router.push(router.route, router.asPath, {
-            locale: value,
-        });
+      const { value } = event.target;
+  
+      router.push(router.route, router.asPath, {
+        locale: value,
+      });
     };
-    return (<NavbarContainer hidden={false} transparent={isNavbarHidden} static={navbarSelector.isStatic}>
-      <Box px={'3rem'}>
-        <Flex bg={'rgba(0 , 0 , 0 , 0)'} color={useColorModeValue('gray.600', 'white')} minH={'70px'} py={{ base: 2 }} px={{ base: 4 }} align={'center'}>
+    return (
+    <NavbarContainer hidden={false} transparent={isNavbarHidden} static={navbarSelector.isStatic}>
+      <Box px={{ base: '0', sm: '3rem' }}>
+        <Flex bg={'rgba(0 , 0 , 0 , 0)'} color={useColorModeValue('gray.600', 'white')} minH={'70px'} py={{ base: 2 }} px={{ base: 4 }} justifyContent={'center'} align={'center'}>
+        <Box width={{ base: '190em', sm: '190em' }}>
+        <SimpleGrid templateColumns={{ base: '1fr 1fr', sm: '1fr 1fr', md:"1fr 1fr" ,  lg: '1fr 4fr 1fr' }}>
           <NextLink href="/" passHref>
-            <div>
-              <LogoWrapper />
-            </div>
+            <Box bgImage={"incursor-logo.png"} 
+              mt={{ base: '0.5rem', sm: '0' }}
+              h={{ base: '2rem', sm: '3rem' }}
+              bgSize={'contain'}
+              bgPosition={'left center'}
+              bgRepeat="no-repeat"
+            />
           </NextLink>
-          <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
-            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3}/> : <HamburgerIcon color={'black'} w={18} h={18}/>} variant={'ghost'} aria-label={'Toggle Navigation'}/>
-          </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
-            <Flex display={{ base: 'none', md: 'flex' }}>
-              <DesktopNav t={t}/>
-            </Flex>
-          </Flex>
-
-          {/* {isAuthenticated ? <UserNavArea /> : <SignArea />} */}
-          <Box alignItems={'center'} display={{ base: 'none', md: 'flex' }}>
-            <Select onChange={handleLocaleChange} value={router.locale} size="lg" variant="unstyled" icon={''} p={0} w="4rem" ml={10}>
+          <Flex flex={{ base: 1, md: 'auto' }}  display={{ base: 'flex', lg: 'none' }} justifyContent="flex-end">
+          <HStack>
+            <Select
+              bg={'white'}
+              onChange={handleLocaleChange}
+              value={router.locale}
+              fontSize={'lg'}
+              size={'lg'}
+              textAlign={'center'}
+              fontWeight={'bold'}
+              icon={<ChevronDownIcon />}
+              w={{ base: '5rem', sm: 'auto' }}
+              _hover={{
+                border: '1px',
+                borderColor: 'white',
+              }}
+            >
               <option key="tr-TR" value="tr-TR">
                 🇹🇷
               </option>
               <option key="en" value="en">
                 🇺🇸
               </option>
-              <option key="zh-CN" value="zh-CN">
-                🇨🇳
+            </Select>
+            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3}/> : <HamburgerIcon color={'black'} w={18} h={18}/>} variant={'ghost'} aria-label={'Toggle Navigation'}/>
+          </HStack>
+          </Flex>
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
+            <Flex display={{ base: 'none', lg: 'flex' }}>
+              <DesktopNav t={t}/>
+            </Flex>
+          </Flex>
+
+          {/* {isAuthenticated ? <UserNavArea /> : <SignArea />} */}
+          <Box justifyContent={'flex-end'} display={{ base: 'none', lg: 'flex' }}>
+            <Select
+              bg={'white'}
+              onChange={handleLocaleChange}
+              value={router.locale}
+              fontSize={'lg'}
+              size={'lg'}
+              textAlign={'center'}
+              fontWeight={'bold'}
+              icon={<ChevronDownIcon />}
+              p={0}
+              w={{ base: '5rem', sm: 'auto' }}
+              _hover={{
+                border: '1px',
+                borderColor: 'white',
+              }}
+            >
+              <option key="tr-TR" value="tr-TR">
+                🇹🇷
               </option>
-              <option key="sv" value="sv">
-                🇸🇪
+              <option key="en" value="en">
+                🇺🇸
               </option>
             </Select>
+          </Box>
+          </SimpleGrid>
           </Box>
         </Flex>
 
@@ -94,7 +136,8 @@ export default function WithSubnavigation() {
       </Box>
     </NavbarContainer>);
 }
-const DesktopNav = ({ t }) => {
+const DesktopNav = () => {
+    const { t } = useTranslation('navbar');
     const linkColor = useColorModeValue('black', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.400', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
@@ -137,7 +180,6 @@ const DesktopSubNav = ({ t, label, href, subLabel }) => {
     </Link>);
 };
 const MobileNav = () => {
-    console.count('MobileNav');
     return (<Stack bg={"#ebecec"} p={4} fontSize={"2rem"} display={{ md: 'none' } } >
       {NavItems.map((navItem, i) => (<MobileNavItem  key={i} {...navItem}/>))}
     </Stack>);
@@ -167,19 +209,19 @@ const MobileNavItem = ({ label, children, href }) => {
 };
 const NavItems = [
     {
-        label: 'Home',
+        label: 'navbar:home',
         href: '/#',
     },
     {
-        label: 'Solution',
+        label: 'navbar:solution',
         href: '/solution',
     },
     {
-        label: 'About Us',
+        label: 'navbar:about',
         href: '/about',
     },
     {
-        label: 'Contact',
+        label: 'navbar:contact',
         href: '/contact',
     },
 ];
@@ -192,21 +234,4 @@ const NavbarContainer = styled.div `
   transition-property: transform, visibility, height, box-shadow, background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
-`;
-const LogoWrapper = styled.div `
-  /* margin-left: 150px; */
-  background-image: url(incursor-logo.png);
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  left: 5%;
-  width: 16rem;
-  height: 8rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  ${media('<=tablet')} {
-    top: -6px;
-    left: 20%;
-  }
 `;

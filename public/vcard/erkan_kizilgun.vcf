@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:4.0
+N:KIZILGUN;Erkan;;;
+FN:Erkan KIZILGUN
+ORG:incursor technology
+TITLE:Sales Manager
+TEL;TYPE=home,voice,pref:+90-505-351-4889
+URL:www.incursor.com
+EMAIL:erkan.kizilgün@incursor.com
+REV:20080424T195243Z
+ADR;TYPE=intl,work,postal,parcel:;;Yenimahalle;Ankara;;12345;Turkiye
+END:VCARD

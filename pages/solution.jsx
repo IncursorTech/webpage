@@ -1,13 +1,13 @@
 import { Box, chakra, Image, List, ListIcon, ListItem, SimpleGrid } from '@chakra-ui/react';
 import CustomContainer from 'components/CustomContainer';
-import Footer from 'components/FooterChakra';
 import Header from 'components/Header';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useEffect } from "react";
 import { MdCheckCircle } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { setNavbarStatic } from 'store/navbarSlice';
 import styled from 'styled-components';
-
 const SoftwareImage = [
   "angluar",
   "react",
@@ -63,7 +63,7 @@ const Card = (props) => {
       <chakra.h2 fontSize={'xl'} fontWeight={'500'} m={5}>
         {title}
       </chakra.h2>
-      <List minH={"20rem"} spacing={3} p={10} fontSize={'lg'}>
+      <List minH={"25rem"} spacing={3} p={10} fontSize={'lg'}>
         {items.map((item, index) => (
           <ListItem key={index}>
             <ListIcon as={MdCheckCircle} color="black.500" />
@@ -83,53 +83,56 @@ const Card = (props) => {
 export default function ContactPage() {
   const dispatch = useDispatch();
   dispatch(setNavbarStatic(false));
+  const { t } = useTranslation();
   return (
     <>
       <SolutionContainer>
-        <Header title="our solutions your solutions" imgURL="background-3.png" />
+        <Header title={t("header:solution")} imgURL={"background-3.png"} />
         <InsideContainer>
         <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
-            Software
+          {t("solution:software.header")}
           </chakra.h1>
           <SimpleGrid columns={{ base: 1, sm: 1, md: 4 }} spacing={10}>
-            <Card title={'Web/Mobile/Desktop App'} items={['Health Assistan', 'Bussines Intelegy' , "Crypto Trader" , 'Data Logger']} image={"web_app.png"} images={SoftwareImage}/>
-            <Card title={'AR/MR Application'} items={['Digital Classroom', 'Remote Assistant']} image={"ar_app.png"} images={ArMrImage}/>
-            <Card title={'Robotic Application'} items={['Agriculture App', 'Military App', 'AGV Robots' , 'Image Processing']} image={"robotic_app.png"} images={RoboticImage}/>
-            <Card title={'Embeded Application'} items={['Battery Management', 'Brush(less/ed) Motor Control','Solar Panel Control' , 'Communication Applications' , 'HMI Applications']} image={"embed_app.png"} images={ElectronicsImage}/>
+            <Card title={t("solution:software.cards.section-1.header")} items={[t("solution:software.cards.section-1.subtitle.title-1") , t("solution:software.cards.section-1.subtitle.title-2") , t("solution:software.cards.section-1.subtitle.title-3") , t("solution:software.cards.section-1.subtitle.title-4")]} image={"web_app.png"} images={SoftwareImage}/>
+            <Card title={t("solution:software.cards.section-2.header")} items={[t("solution:software.cards.section-2.subtitle.title-1") , t("solution:software.cards.section-2.subtitle.title-2") ]} image={"ar_app.png"} images={ArMrImage}/>
+            <Card title={t("solution:software.cards.section-3.header")} items={[t("solution:software.cards.section-3.subtitle.title-1") , t("solution:software.cards.section-3.subtitle.title-2") , t("solution:software.cards.section-3.subtitle.title-3") , t("solution:software.cards.section-3.subtitle.title-4")]} image={"robotic_app.png"} images={RoboticImage}/>
+            <Card title={t("solution:software.cards.section-4.header")} items={[t("solution:software.cards.section-4.subtitle.title-1") , t("solution:software.cards.section-4.subtitle.title-2") , t("solution:software.cards.section-4.subtitle.title-3") , t("solution:software.cards.section-4.subtitle.title-4")]} image={"embed_app.png"} images={ElectronicsImage}/>
           </SimpleGrid>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
-            Electronic
+          {t("solution:electronic.header")}
           </chakra.h1>
           <SimpleGrid columns={{ base: 1, sm: 1, md: 4 }} spacing={10}>
-            <Card title={'Automation PLC Application'} items={['Industrial Applications', 'IOT Applications','Quality Control Devices', 'Product Testing Equipment']} image={"plc_app.png"} images={PLCImage}/>
-            <Card title={'Embeded Application'} items={['2 Layer PCB Design', 'IOT Hardware Design', 'A/D Circuit Design' , 'Sensor Design']} image={"embeded_app.png"} images={EmbededImage}/>
+            <Card title={t("solution:electronic.cards.section-1.header")} items={[t("solution:electronic.cards.section-1.subtitle.title-1") , t("solution:electronic.cards.section-1.subtitle.title-2") , t("solution:electronic.cards.section-1.subtitle.title-3") ]} image={"plc_app.png"} images={PLCImage}/>
+            <Card title={t("solution:electronic.cards.section-2.header")} items={[t("solution:electronic.cards.section-2.subtitle.title-1") , t("solution:electronic.cards.section-2.subtitle.title-2") , t("solution:electronic.cards.section-2.subtitle.title-3") , t("solution:electronic.cards.section-2.subtitle.title-4")]} image={"embeded_app.png"} images={EmbededImage}/>
+            <Card title={t("solution:electronic.cards.section-3.header")} items={[t("solution:electronic.cards.section-3.subtitle.title-1") , t("solution:electronic.cards.section-3.subtitle.title-2") , t("solution:electronic.cards.section-3.subtitle.title-3") , t("solution:electronic.cards.section-3.subtitle.title-4")]} image={"embeded_app.png"} images={EmbededImage}/>
           </SimpleGrid>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
-            Modelling
+          {t("solution:modelling.header")}
           </chakra.h1>
           <SimpleGrid columns={{ base: 1, sm: 1, md: 4 }} spacing={10}>
-            <Card title={'3D'} items={['UGV Concept&Final Model', 'Embeded Card', 'Automation' , 'Rendering']} image={"3dmodel.png"} images={Modelling3dImage}/>
-            <Card title={'2D'} items={['Software Content', 'Corporate Identity']} image={"kurumsal.png"} images={Modelling2dImage}/>
+            <Card title={t("solution:modelling.cards.section-1.header")} items={[t("solution:modelling.cards.section-1.subtitle.title-1") , t("solution:modelling.cards.section-1.subtitle.title-2") , t("solution:modelling.cards.section-1.subtitle.title-3") , t("solution:modelling.cards.section-1.subtitle.title-4")]} image={"3dmodel.png"} images={Modelling3dImage}/>
+            <Card title={t("solution:modelling.cards.section-2.header")} items={[t("solution:modelling.cards.section-2.subtitle.title-1") , t("solution:modelling.cards.section-2.subtitle.title-2") ]} image={"kurumsal.png"} images={Modelling2dImage}/>
           </SimpleGrid>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}></chakra.h1>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
-            Consultancy
+          {t("solution:consultancy.header")}
           </chakra.h1>
           <SimpleGrid columns={{ base: 1, sm: 1, md: 4 }} spacing={10}>
-            <Card title={'Generally'} items={[ 'Elect. / Mech. Production' , 'Training Equipment' , 'ISO', 'TUBITAK / KOSGEB', 'Military']} image={"danismanlik.png"} images={[]}/>
+            <Card title={t("solution:consultancy.cards.section-1.header")} items={[t("solution:consultancy.cards.section-1.subtitle.title-1") , t("solution:consultancy.cards.section-1.subtitle.title-2") , t("solution:consultancy.cards.section-1.subtitle.title-3") , t("solution:consultancy.cards.section-1.subtitle.title-4")]} image={"danismanlik.png"} images={[]}/>
+            <Card title={t("solution:consultancy.cards.section-2.header")} items={[t("solution:consultancy.cards.section-2.subtitle.title-1") ]} image={"danismanlik.png"} images={[]}/>
           </SimpleGrid>
         </InsideContainer>
       </SolutionContainer>
-      <Footer />
+      
     </>
   );
 }
 export async function getStaticProps({ locale }) {
   return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'home', 'navbar', 'countries'])),
-      // Will be passed to the page component as props
-    },
+      props: {
+          ...(await serverSideTranslations(locale, ['navbar', 'footer', 'solution' , 'header'])),
+          // Will be passed to the page component as props
+      },
   };
 }
 const SolutionContainer = styled.div`

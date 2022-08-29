@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import styled from 'styled-components';
 import SectionTitle from './SectionTitle';
-export default function Page({ title, description, imgURL }) {
+export default function Page({ title, imgURL }) {
   return (
     <>
       <HeaderContainer img={imgURL}>
@@ -25,14 +25,4 @@ const Title = styled(SectionTitle)`
   font-size: 6rem;
   font-weight: 400;
   color: black;
-`;
-const Description = styled.div`
-  font-size: 1.8rem;
-  color: rgba(var(--textSecondary), 0.8);
-  text-align: center;
-  max-width: 60%;
-  margin: auto;
-`;
-const ChildrenWrapper = styled.div`
-  margin-bottom: 10rem;
 `;
