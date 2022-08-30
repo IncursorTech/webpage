@@ -70,6 +70,7 @@ export default function ContactPage() {
                 t('solution:software.cards.section-1.subtitle.title-2'),
                 t('solution:software.cards.section-1.subtitle.title-3'),
                 t('solution:software.cards.section-1.subtitle.title-4'),
+                t('solution:software.cards.section-1.subtitle.title-5'),
               ]}
               image={'web_app'}
               images={SoftwareImage}
@@ -124,6 +125,7 @@ export default function ContactPage() {
                 t('solution:electronic.cards.section-2.subtitle.title-2'),
                 t('solution:electronic.cards.section-2.subtitle.title-3'),
                 t('solution:electronic.cards.section-2.subtitle.title-4'),
+                t('solution:electronic.cards.section-2.subtitle.title-5'),
               ]}
               image={'embeded_app'}
               images={EmbededImage}
@@ -174,6 +176,7 @@ export default function ContactPage() {
                 t('solution:consultancy.cards.section-1.subtitle.title-2'),
                 t('solution:consultancy.cards.section-1.subtitle.title-3'),
                 t('solution:consultancy.cards.section-1.subtitle.title-4'),
+                t('solution:consultancy.cards.section-1.subtitle.title-5'),
               ]}
               image={'danismanlik'}
               images={[]}
@@ -181,6 +184,27 @@ export default function ContactPage() {
             <Card
               title={t('solution:consultancy.cards.section-2.header')}
               items={[t('solution:consultancy.cards.section-2.subtitle.title-1')]}
+              image={'danismanlik'}
+              images={[]}
+            />
+            <Card
+              title={t('solution:consultancy.cards.section-3.header')}
+              items={[
+                t('solution:consultancy.cards.section-3.subtitle.title-1'),
+                t('solution:consultancy.cards.section-3.subtitle.title-2'),
+                t('solution:consultancy.cards.section-3.subtitle.title-3'),
+                t('solution:consultancy.cards.section-3.subtitle.title-4'),
+              ]}
+              image={'danismanlik'}
+              images={[]}
+            />
+            <Card
+              title={t('solution:consultancy.cards.section-4.header')}
+              items={[
+                t('solution:consultancy.cards.section-4.subtitle.title-1'),
+                t('solution:consultancy.cards.section-4.subtitle.title-2'),
+                t('solution:consultancy.cards.section-4.subtitle.title-3'),
+              ]}
               image={'danismanlik'}
               images={[]}
             />
