@@ -1,23 +1,27 @@
 {
-    "header": "Çözümlerimiz",
-    "system":{
-        "title":"Sistem Entegrasyonu",
-        "description":"LiDAR'lar, kameralar, radarlar, GNSS sistemleri ve Drive by Wire denetleyicileri dahil AV'ler için sensör ve sistem entegrasyonunda deneyim sahibiyiz"
-    },
-    "software":{
-        "title":"Yazılım Geliştirme",
-        "description":"Web uygulamaları, mobil uygulamalar , otonom sürüş, haritalama, görüntü işleme ve çok daha fazlası dahil olmak üzere farklı birçok çalışmanızda gömülü yazılım ürünleri geliştirebiliriz."
-    },
-    "hardware":{
-        "title":"Donanım Geliştirme",
-        "description":"Tasarım gereksinimlerinize uygun olarak dokümantasyondan üretime kadar endüstriyel ürün geliştirmeleriniz üzerinde çalışabiliriz."
-    },
-    "algorithms":{
-        "title":"Algoritma Geliştirme",
-        "description":"Güncel sensör füzyonu teknolojileri ile endüstriyel , otonom araçlar ve tarım araçları uygulamalarınızda gelişmiş sonuçlar elde etmeniz için yeni algoritmalar geliştirebilir ve test edebiliriz."
-    },
-    "consultancy":{
-        "title":"Danışmanlık Hizmeti",
-        "description":"Otonom araçlar , endüstriyel otomasyonlar alanlarında yazılım, tasarım, elektronik ve bir çok alanda uzman ekibimizle hedefinizi bir adım öteye taşıyabiliriz."
-    }
+  "header": "Çözümlerimiz",
+  "system": {
+    "title": "Sistem Entegrasyonu",
+    "description": "LiDAR'lar, kameralar, radarlar, GNSS sistemleri ve Drive by Wire denetleyicileri dahil AV'ler için sensör ve sistem entegrasyonunda deneyim sahibiyiz"
+  },
+  "software": {
+    "title": "Yazılım Geliştirme",
+    "description": "Web uygulamaları, mobil uygulamalar , otonom sürüş, haritalama, görüntü işleme ve çok daha fazlası dahil olmak üzere farklı birçok çalışmanızda gömülü yazılım ürünleri geliştirebiliriz."
+  },
+  "hardware": {
+    "title": "Donanım Geliştirme",
+    "description": "Tasarım gereksinimlerinize uygun olarak dokümantasyondan üretime kadar endüstriyel ürün geliştirmeleriniz üzerinde çalışabiliriz."
+  },
+  "algorithms": {
+    "title": "Algoritma Geliştirme",
+    "description": "Güncel sensör füzyonu teknolojileri ile endüstriyel , otonom araçlar ve tarım araçları uygulamalarınızda gelişmiş sonuçlar elde etmeniz için yeni algoritmalar geliştirebilir ve test edebiliriz."
+  },
+  "consultancy": {
+    "title": "Danışmanlık Hizmeti",
+    "description": "Otonom araçlar , endüstriyel otomasyonlar alanlarında yazılım, tasarım, elektronik ve bir çok alanda uzman ekibimizle hedefinizi bir adım öteye taşıyabiliriz."
+  },
+  "supply": {
+    "title": "Tedarik",
+    "description": "Dünyanın önde gelen üreticilerinden temsilcilik ve distribütörlük vasıtası ile savunma ekipmanları ve muhimmat tedariğini gerçekleştirebiliriz."
+  }
 }

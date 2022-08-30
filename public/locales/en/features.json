@@ -1,23 +1,27 @@
 {
-    "header": "Our Solution",
-    "system":{
-        "title":"System Integration",
-        "description":"We are experienced at sensor and system integration for AVs including LiDARs, cameras, radars, GNSS systems along with Drive by Wire controllers."
-    },
-    "software":{
-        "title":"Software Development",
-        "description":"We can develop embedded software products for your many different works, including web applications, mobile applications, autonomous driving, mapping, image processing and much more."
-    },
-    "hardware":{
-        "title":"Hardware Development",
-        "description":"We can work on your industrial product development from documentation to the manufacturing with according to your design requirements."
-    },
-    "algorithms":{
-        "title":"Algorithms Development",
-        "description":"We can develop and test novel algorithms for improved results for your real-world applications with state-of-the-art sensor fusion technologies."
-    },
-    "consultancy":{
-        "title":"Consultancy Service",
-        "description":"We can take your goal one step further with our expert team in software, design, electronics and many other fields in the fields of autonomous vehicles, industrial automations."
-    }
+  "header": "Our Solution",
+  "system": {
+    "title": "System Integration",
+    "description": "We are experienced at sensor and system integration for AVs including LiDARs, cameras, radars, GNSS systems along with Drive by Wire controllers."
+  },
+  "software": {
+    "title": "Software Development",
+    "description": "We can develop embedded software products for your many different works, including web applications, mobile applications, autonomous driving, mapping, image processing and much more."
+  },
+  "hardware": {
+    "title": "Hardware Development",
+    "description": "We can work on your industrial product development from documentation to the manufacturing with according to your design requirements."
+  },
+  "algorithms": {
+    "title": "Algorithms Development",
+    "description": "We can develop and test novel algorithms for improved results for your real-world applications with state-of-the-art sensor fusion technologies."
+  },
+  "consultancy": {
+    "title": "Consultancy Service",
+    "description": "We can take your goal one step further with our expert team in software, design, electronics and many other fields in the fields of autonomous vehicles, industrial automations."
+  },
+  "supply": {
+    "title": "Supply",
+    "description": "Supply of defense equipment and ammunition from the world's leading manufacturers through representation and distributorship."
+  }
 }
