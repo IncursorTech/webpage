@@ -2,7 +2,7 @@
   "header": "Our Solution",
   "system": {
     "title": "System Integration",
-    "description": "We are experienced at sensor and system integration for AVs including LiDARs, cameras, radars, GNSS systems along with Drive by Wire controllers."
+    "description": "We have experience in sensor and system integration for AVs including LiDARs, cameras, radars, GNSS systems and Drive by Wire controllers"
   },
   "software": {
     "title": "Software Development",
@@ -10,11 +10,11 @@
   },
   "hardware": {
     "title": "Hardware Development",
-    "description": "We can work on your industrial product development from documentation to the manufacturing with according to your design requirements."
+    "description": "We can work on your industrial product developments from documentation to production in accordance with your design requirements."
   },
   "algorithms": {
     "title": "Algorithms Development",
-    "description": "We can develop and test novel algorithms for improved results for your real-world applications with state-of-the-art sensor fusion technologies."
+    "description": "We can develop and test new algorithms for improved results in your industrial, autonomous and agricultural vehicle applications with up-to-date sensor fusion technologies."
   },
   "consultancy": {
     "title": "Consultancy Service",

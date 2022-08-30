@@ -1,6 +1,7 @@
 {
-  "cSpell.words": ["Chakra", "Jitsi"],
+  "cSpell.words": ["Chakra", "Jitsi", "KOSGEB", "TUBITAK"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "cSpell.language": "en,tr,tr-TR"
 }

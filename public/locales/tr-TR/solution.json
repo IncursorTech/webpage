@@ -1,192 +1,176 @@
 {
-    "software":
-    {
-        "header":"Yazılım",
-        "cards":
-        {
-        "section-1":
-        {
-            "header":"Web/Mobil/Masaüstü",
-            "subtitle":
-            {
-                "title-1":"Sağlık Assistanı",
-                "title-2":"İş Zekası Uygulamaları",
-                "title-3":"Kripto Botları",
-                "title-4":"Veri Toplama Yazılımları"
-            }
-        },
-        "section-2":
-        {
-            "header":"AR/MR",
-            "subtitle":
-            {
-                "title-1":"Dijital Eğitim Sınıfları",
-                "title-2":"Endüstriyel Fabrika İçi Uygulamaları"
-            }
-        },
-        "section-3":
-        {
-            "header":"Robotik",
-            "subtitle":
-            {
-                "title-1":"Tarım Robotları",
-                "title-2":"Askeri Görüntüleme",
-                "title-3":"AGV Araç Sistemleri",
-                "title-4":"Görüntü İşleme"
-            }
-        },
-        "section-4":
-        {
-            "header":"Gömülü",
-            "subtitle":
-            {
-                "title-1":"Batarya Yönetim Sistemleri",
-                "title-2":"Motor Kontrol Sistemleri",
-                "title-3":"Solar Panel Veri Görüntüleme",
-                "title-4":"Haberleşme Uygulamaları"
-            }
+  "software": {
+    "header": "Yazılım",
+    "cards": {
+      "section-1": {
+        "header": "Web / Mobil / Masaüstü Uygulamaları",
+        "subtitle": {
+          "title-1": "Sağlık Asistanı",
+          "title-2": "İş Zekası Uygulamaları",
+          "title-3": "Kripto Botları",
+          "title-4": "Veri Toplama & Görselleştirme Yazılımları"
         }
+      },
+      "section-2": {
+        "header": "AR / MR",
+        "subtitle": {
+          "title-1": "Dijital Eğitim Sınıfları",
+          "title-2": "Endüstriyel Fabrika İçi Uygulamaları"
         }
-    },
-    "electronic":
-    {
-        "header":"Elektronik",
-        "cards":
-        {
-            "section-1":{
-                "header":"Endüstriyel PLC",
-                "subtitle":{
-                    "title-1":"Endüstriyel Uygulamalar",
-                    "title-2":"Kalite Kontrol Sistemleri",
-                    "title-3":"Ürün Test Cihazları",
-                    "title-4":"",
-                    "title-5":""
-                }
-            },
-            "section-2":{
-                "header":"Gömülü",
-                "subtitle":{
-                    "title-1":"Çoklu Katman PCB Tasarımı",
-                    "title-2":"IOT Donanım Tasarımları",
-                    "title-3":"Analog ve Dijital Devre Tasarımları",
-                    "title-4":"Görüntü İşleme",
-                    "title-5":""
-                }
-            },
-            "section-3":{
-                "header":"Güç Elektroniği",
-                "subtitle":{
-                    "title-1":"Fıça(lı/sız) Motor Kontrol Sistemleri",
-                    "title-2":"Güneş Takip Sistemleri(GES)",
-                    "title-3":"Power Led Sürücüleri",
-                    "title-4":"Batarya Yönetim Sistemleri",
-                    "title-5":""
-                }
-            },
-            "section-4":{
-                "header":"",
-                "subtitle":{
-                    "title-1":"",
-                    "title-2":"",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            }
+      },
+      "section-3": {
+        "header": "Robotik",
+        "subtitle": {
+          "title-1": "Tarım Robotları",
+          "title-2": "Keşif, Gözetleme, Görüntüleme ve Haritalama Sistemleri",
+          "title-3": "AGV Araç Sistemleri",
+          "title-4": "Görüntü İşleme & Analiz Uygulamaları"
         }
-    },
-    "modelling":
-    {
-        "header":"Modelleme",
-        "cards":
-        {
-            "section-1":{
-                "header":"3B",
-                "subtitle":{
-                    "title-1":"İKA Konsept Tasarımlar",
-                    "title-2":"Endüstriyel Sistem",
-                    "title-3":"Render ve Mock-up Ürün",
-                    "title-4":"Oyun içerikleri",
-                    "title-5":""
-                }
-            },
-            "section-2":{
-                "header":"2B",
-                "subtitle":{
-                    "title-1":"UI / UX Tasarımlar",
-                    "title-2":"Kurumsal Kimlik",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            },
-            "section-3":{
-                "header":"",
-                "subtitle":{
-                    "title-1":"",
-                    "title-2":"",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            },
-            "section-4":{
-                "header":"",
-                "subtitle":{
-                    "title-1":"",
-                    "title-2":"",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            }
+      },
+      "section-4": {
+        "header": "Gömülü Sistemler",
+        "subtitle": {
+          "title-1": "Batarya Yönetim Sistemleri",
+          "title-2": "Motor Kontrol Sistemleri",
+          "title-3": "Solar Panel Veri Görüntüleme",
+          "title-4": "Haberleşme Uygulamaları"
         }
-    },
-    "consultancy":
-    {
-        "header":"Danışmanlık",
-        "cards":
-        {
-            "section-1":{
-                "header":"Genel",
-                "subtitle":{
-                    "title-1":"Elektronik / Mekanik Üretim",
-                    "title-2":"Eğitim Setleri",
-                    "title-3":"Bilim Merkezleri",
-                    "title-4":"ISO",
-                    "title-5":"TUBITAK / KOSGEB"
-                }
-            },
-            "section-2":{
-                "header":"Askeri",
-                "subtitle":{
-                    "title-1":"Dünyanın önde gelen üreticilerinden temsilcilik ve distribütörlük vasıtası ile muhimmat tedariki",
-                    "title-2":"",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            },
-            "section-3":{
-                "header":"",
-                "subtitle":{
-                    "title-1":"",
-                    "title-2":"",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            },
-            "section-4":{
-                "header":"",
-                "subtitle":{
-                    "title-1":"",
-                    "title-2":"",
-                    "title-3":"",
-                    "title-4":"",
-                    "title-5":""
-                }
-            }
-        }
+      }
     }
+  },
+  "electronic": {
+    "header": "Elektronik Uygulamalar",
+    "cards": {
+      "section-1": {
+        "header": "Endüstriyel Uygulamalar",
+        "subtitle": {
+          "title-1": "Endüstriyel PLC",
+          "title-2": "Kalite Kontrol Sistemleri",
+          "title-3": "Ürün Test Cihazları",
+          "title-4": "",
+          "title-5": ""
+        }
+      },
+      "section-2": {
+        "header": "Gömülü Sistemler",
+        "subtitle": {
+          "title-1": "Çoklu Katman PCB Tasarımı",
+          "title-2": "IOT Donanım Tasarımları",
+          "title-3": "Analog ve Dijital Devre Tasarımları",
+          "title-4": "Sensör Tasarımları & Testleri",
+          "title-5": "Veri Toplama Kartları"
+        }
+      },
+      "section-3": {
+        "header": "Güç Elektroniği",
+        "subtitle": {
+          "title-1": "Batarya Yönetim Sistemleri",
+          "title-2": "Fırçalı/Fırçasız Motor Kontrol Sistemleri",
+          "title-3": "Güneş Takip Sistemleri (Güneş Enerjisi Sistemleri)",
+          "title-4": "Power Led Sürücüleri",
+          "title-5": ""
+        }
+      },
+      "section-4": {
+        "header": "",
+        "subtitle": {
+          "title-1": "",
+          "title-2": "",
+          "title-3": "",
+          "title-4": "",
+          "title-5": ""
+        }
+      }
+    }
+  },
+  "modelling": {
+    "header": "Modelleme",
+    "cards": {
+      "section-1": {
+        "header": "3B",
+        "subtitle": {
+          "title-1": "İKA Konsept Tasarımlar",
+          "title-2": "Endüstriyel Sistem Tasarımları",
+          "title-3": "Render ve Mock-up Ürünler",
+          "title-4": "Oyun içerikleri",
+          "title-5": ""
+        }
+      },
+      "section-2": {
+        "header": "2B",
+        "subtitle": {
+          "title-1": "UI / UX Tasarımlar",
+          "title-2": "Kurumsal Kimlik",
+          "title-3": "",
+          "title-4": "",
+          "title-5": ""
+        }
+      },
+      "section-3": {
+        "header": "",
+        "subtitle": {
+          "title-1": "",
+          "title-2": "",
+          "title-3": "",
+          "title-4": "",
+          "title-5": ""
+        }
+      },
+      "section-4": {
+        "header": "",
+        "subtitle": {
+          "title-1": "",
+          "title-2": "",
+          "title-3": "",
+          "title-4": "",
+          "title-5": ""
+        }
+      }
+    }
+  },
+  "consultancy": {
+    "header": "Danışmanlık ve Tedarik",
+    "cards": {
+      "section-1": {
+        "header": "Genel",
+        "subtitle": {
+          "title-1": "Elektronik / Mekanik Üretim",
+          "title-2": "Eğitim Setleri",
+          "title-3": "Bilim Merkezleri",
+          "title-4": "ISO",
+          "title-5": "TUBITAK / KOSGEB Danışmanlıkları"
+        }
+      },
+      "section-2": {
+        "header": "Askeri",
+        "subtitle": {
+          "title-1": "Dünyanın önde gelen üreticilerinden temsilcilik ve distribütörlük vasıtası ile muhimmat tedariki",
+          "title-2": "",
+          "title-3": "",
+          "title-4": "",
+          "title-5": ""
+        }
+      },
+      "section-3": {
+        "header": "Danışmanlık",
+        "subtitle": {
+          "title-1": "Elektronik / Mekanik Üretim",
+          "title-2": "Eğitim Setleri",
+          "title-3": "Kalite Yönetimi Sistemleri",
+          "title-4": "Savunma Sanayi Sertifikasyonu",
+          "title-5": ""
+        }
+      },
+      "section-4": {
+        "header": "Tedarik",
+        "subtitle": {
+          "title-1": "Savunma Sanayi Ekipmanları",
+          "title-2": "Mühimmat",
+          "title-3": "Endüstriyel Ürün Grupları (PLC, Sensörler, Aktüatörler, Konnektörler, vs.",
+          "title-4": "",
+          "title-5": ""
+        }
+      }
+    }
+  }
 }

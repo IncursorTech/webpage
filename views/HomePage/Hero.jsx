@@ -1,25 +1,17 @@
-import styled from 'styled-components';
-import { media } from 'utils/media';
-// import { Input, Button as ChakraButton, ButtonGroup as ChakraButtonGroup } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Image from 'next/future/image';
 export default function Hero() {
-    // const { setIsModalOpened } = useNewsletterModalContext();
-    return (
-    <BackGround>
-      <div className="container-fluid p-5 align-content-center h-100">
-        <div className="row justify-content-center h-100"> 
-        </div>
-      </div>
-    </BackGround>);
+  return (
+    <Box position={'relative'} h={'100vh'} margin={'auto'} alignSelf={'center'}>
+      <Image
+        src={'/images/hero.png'}
+        alt="incursor-hero"
+        quality={100}
+        fill
+        priority
+        unoptimized
+        style={{ 'object-fit': 'cover', 'object-position': 'top' }}
+      />
+    </Box>
+  );
 }
-
-const BackGround = styled.div `
-  padding: 5rem;
-  background-image: url(/inCursor.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  height: 100vh;
-  ${media('<=tablet')} {
-    padding: 0rem;
-  }
-`;
