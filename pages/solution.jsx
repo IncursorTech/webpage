@@ -3,34 +3,40 @@ import CustomContainer from 'components/CustomContainer';
 import Header from 'components/Header';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { MdCheckCircle } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { setNavbarStatic } from 'store/navbarSlice';
-import styled from 'styled-components';
+
 const SoftwareImage = ['angular', 'react', 'express', 'python'];
-
 const RoboticImage = ['ros', 'moveit', 'gazebo'];
-
 const ArMrImage = ['unity', 'blender'];
-
 const ElectronicsImage = ['cubemx', 'avr'];
-
 const PLCImage = ['siemens', 'gmt', 'gemo'];
-
-const EmbededImage = ['st', 'atmel', 'gigadevice', 'microchip'];
-
+const EmbeddedImage = ['st', 'atmel', 'gigadevice', 'microchip'];
 const Modelling3dImage = ['solidworks', 'blender'];
 const Modelling2dImage = ['corel', 'ilustirator'];
 
 const Card = (props) => {
   const { title, items, image, images } = props;
   return (
-    <Box shadow={'xl'} border={'1px'} rounded="lg" alignContent={'Center'}>
+    <Box
+      bg={'white'}
+      border={'1px'}
+      borderColor={'gray.200'}
+      rounded="lg"
+      alignContent={'Center'}
+      cursor={'pointer'}
+      transition={'ease-in-out .3s'}
+      _hover={{
+        transform: 'scale(1.01)',
+        shadow: 'lg',
+      }}
+    >
       <Box p={5}>
-        <Image src={`/images/${image}.png`} alt="naruto" width={100} height={100} />
+        <Image src={`/images/${image}.png`} alt={`card_${image}`} width={100} height={100} />
       </Box>
-      <chakra.h2 fontSize={'xl'} fontWeight={'500'} m={5}>
+      <chakra.h2 fontSize={'xl'} fontWeight={'extrabold'} m={5}>
         {title}
       </chakra.h2>
       <List minH={'25rem'} spacing={3} p={10} fontSize={'lg'}>
@@ -56,9 +62,9 @@ export default function ContactPage() {
   const { t } = useTranslation();
   return (
     <>
-      <SolutionContainer>
+      <Box>
         <Header title={t('header:solution')} imgURL={'background-3.png'} />
-        <InsideContainer>
+        <Box px={'5rem'}>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
             {t('solution:software.header')}
           </chakra.h1>
@@ -128,7 +134,7 @@ export default function ContactPage() {
                 t('solution:electronic.cards.section-2.subtitle.title-5'),
               ]}
               image={'embeded_app'}
-              images={EmbededImage}
+              images={EmbeddedImage}
             />
             <Card
               title={t('solution:electronic.cards.section-3.header')}
@@ -139,7 +145,7 @@ export default function ContactPage() {
                 t('solution:electronic.cards.section-3.subtitle.title-4'),
               ]}
               image={'embeded_app'}
-              images={EmbededImage}
+              images={EmbeddedImage}
             />
           </SimpleGrid>
           <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'3rem'} mt={'3rem'} fontWeight={'bold'}>
@@ -209,8 +215,8 @@ export default function ContactPage() {
               images={[]}
             />
           </SimpleGrid>
-        </InsideContainer>
-      </SolutionContainer>
+        </Box>
+      </Box>
     </>
   );
 }
@@ -222,14 +228,3 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-const SolutionContainer = styled.div`
-  z-index: -1;
-  background-color: #ebecec;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-  padding-bottom: 3rem;
-`;
-const InsideContainer = styled(CustomContainer)`
-  max-width: 150em;
-`;

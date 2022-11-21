@@ -14,7 +14,6 @@ export default function LargeWithLogoLeft() {
   const { t } = useTranslation('footer');
   return (
     <Box
-      bg={'url(background-3.png)'}
       bgRepeat={'no-repeat'}
       bgSize={'cover'}
       bgPosition={{ base: 'right', md: 'center' }}

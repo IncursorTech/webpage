@@ -1,16 +1,18 @@
 import { Box } from '@chakra-ui/react';
-import Image from 'next/future/image';
+import Image from 'next/image';
+import ReactPlayer from 'react-player';
 export default function Hero() {
   return (
     <Box position={'relative'} h={'100vh'} margin={'auto'} alignSelf={'center'}>
       <Image
         src={'/images/hero.png'}
-        alt="incursor-hero"
+        alt="hero"
         quality={100}
-        fill
-        priority
-        unoptimized
-        style={{ 'object-fit': 'cover', 'object-position': 'top' }}
+        layout="fill"
+        sizes="100vh"
+        style={{
+          objectFit: 'cover',
+        }}
       />
     </Box>
   );

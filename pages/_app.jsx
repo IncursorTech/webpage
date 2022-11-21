@@ -2,7 +2,7 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { StepsStyleConfig as Steps } from 'chakra-ui-steps';
 import Footer from 'components/FooterChakra';
 import { GlobalStyle } from 'components/GlobalStyles';
@@ -34,12 +34,13 @@ const theme = extendTheme({
 });
 function Root({ Component, pageProps }) {
   return (
-    <>
+    <Box fontFamily={'Abel'} bg={'linear-gradient(135deg, #ffffff,#dddddd,#ffffff)'}>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet"></link>
         {/* <link rel="alternate" type="application/rss+xml" href={EnvVars.URL + 'rss'} title="RSS 2.0" /> */}
         {/* <script
           dangerouslySetInnerHTML={{
@@ -61,7 +62,7 @@ function Root({ Component, pageProps }) {
           </CookiesProvider>
         </ChakraProvider>
       </Provider>
-    </>
+    </Box>
   );
 }
 export default appWithTranslation(Root);

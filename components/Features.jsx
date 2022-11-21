@@ -1,10 +1,22 @@
-import { Box, chakra, Flex, Icon, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, chakra, Flex, Icon, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
+import NextLink from 'next/link';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BsCalculatorFill, BsFillCalendar3Fill, BsFillGearFill, BsFillQuestionSquareFill, BsTerminalFill, BsTools } from 'react-icons/bs';
-
 const Feature = ({ title, text, icon }) => {
   return (
-    <Stack p={'2rem'} border="1px" rounded={'lg'}>
+    <Stack
+      p={'2rem'}
+      border="1px"
+      borderColor={'gray.200'}
+      rounded={'lg'}
+      bg={'white'}
+      transition={'ease-in-out .3s'}
+      _hover={{
+        transform: 'scale(1.01)',
+        shadow: 'lg',
+      }}
+    >
       <Flex w={8} h={8} fontSize={'10rem'} align={'center'} justify={'center'} color={'black'} mb={1}>
         {icon}
       </Flex>
@@ -56,6 +68,33 @@ export default function SimpleThreeColumns() {
           text={t('features:supply.description')}
         />
       </SimpleGrid>
+      <Flex align={'center'} justify={'center'} p={10}>
+        <NextLink
+          href={'/solution'}
+          passHref
+          style={{
+            color: 'black',
+            bg: 'white',
+            fill: 'none',
+          }}
+          _hover={{
+            bg: 'none',
+          }}
+        >
+          <Button
+            size={'lg'}
+            h={'5rem'}
+            bg={'white'}
+            rightIcon={<AiOutlineArrowRight color="black" />}
+            _hover={{
+              bg: 'none',
+              border: '2px',
+            }}
+          >
+            For More
+          </Button>
+        </NextLink>
+      </Flex>
     </Box>
   );
 }
