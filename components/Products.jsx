@@ -29,6 +29,7 @@ export default function Products() {
         </NextLink>
       ),
       content: t('projects:product1.content'),
+      tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
     {
       header: t('projects:product2.header'),
@@ -48,6 +49,7 @@ export default function Products() {
         </NextLink>
       ),
       content: t('projects:product2.content'),
+      tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
     {
       header: t('projects:product3.header'),
@@ -67,6 +69,7 @@ export default function Products() {
         </NextLink>
       ),
       content: t('projects:product3.content'),
+      tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
     {
       header: t('projects:product4.header'),
@@ -86,6 +89,7 @@ export default function Products() {
         </NextLink>
       ),
       content: t('projects:product4.content'),
+      tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
     {
       header: t('projects:product5.header'),
@@ -116,6 +120,7 @@ export default function Products() {
         </NextLink>
       ),
       content: t('projects:product5.content'),
+      tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
     {
       header: t('projects:product6.header'),
@@ -123,6 +128,7 @@ export default function Products() {
       label: t('projects:label.automation'),
       component: '',
       content: t('projects:product6.content'),
+      tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
   ];
 
@@ -256,6 +262,31 @@ export default function Products() {
                       {item.content}
                       {item.component}
                     </Text>
+                  </Box>
+                  <Box display={selectedObjectClassName === `element${index + 2}` ? 'none' : 'none'}>
+                    <Stack mb={5} direction={'row'} align={'center'}>
+                      <AiFillTags color="black" />
+                      <Text fontSize={'sm'} fontWeight={'bold'} textAlign={'left'}>
+                        Tags:
+                      </Text>
+                    </Stack>
+                    <SimpleGrid px={5} gap={0.5} templateColumns={'1fr 1fr 1fr 1fr 1fr 1fr'}>
+                      {item.tags.map((item, index) => (
+                        <Box
+                          cursor={'default'}
+                          width={'auto'}
+                          p={1}
+                          key={index}
+                          _hover={{
+                            fontWeight: 'bold',
+                          }}
+                        >
+                          <Text width={'auto'} rounded={'md'} fontWeight={'bold'} textAlign={'left'}>
+                            {item}
+                          </Text>
+                        </Box>
+                      ))}
+                    </SimpleGrid>
                   </Box>
                   <Flex align={'flex-end'} justify={'center'} w={'100%'} h={'100%'}>
                     <Button
