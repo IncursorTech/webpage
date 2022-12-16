@@ -1,0 +1,38 @@
+{
+  "header": "Projects",
+  "product1": {
+    "header": "wetreat",
+    "content": "Sağlık Turizim Alanında geliştirmis olduğumuz wetreat.com.tr CRM tabanlı online sağlık hizmetleri ve danışmanlığı platformudur. Bu platform üzerinden Türkiye`de olmak istediğiniz ameliyatı konaklama , tercüman , transfer gibi bir çok seçimle ayrıntılı bir plana haline getirip en iyi hizmeti alabilmek için talep oluşturabilrisiniz."
+  },
+  "product2": {
+    "header": "Tarımsal Faaliyet Robotu",
+    "content": "Otonom tarım destek robotu tasarımını ve saha uygulamalarını konu almaktadır. Tarlada net ürün tahminlemesi, ekim ve çıkışı olmayan tohumların yeniden ekilmesi ve Cercospora hastalığının erken teşhisi ve uyarı sistemi içeren tarım destek robotu tasarımı."
+  },
+  "product3": {
+    "header": "Seder Egitim",
+    "content": "Kaynaştirma/Bütünleştirme Yoluyla Eğitim Uygulamalarindan Faydalanan Özel Eğitim İhtiyaci Olan Öğrencilerin Mesleki Eğilimini Belirleme Envanteri"
+  },
+  "product4": {
+    "header": "360° Sanal Tur",
+    "content": "VR uyumlu HTML5 tabanlı 360 Sanal Turlara evrilirken, cloud tabanlı sanal turlarda Matterport 3D Sanal Tur ile değişen ihtiyaçlara cevap veriyoruz."
+  },
+  "product5": {
+    "header": "Güneş Takip Sistemi",
+    "content": "300W 24V DC Motor yön ve hız kontrolü yapmakatadır. Üzerindeki IMU Sayesinde harici sensörlerden bağımsız kendi açısını ölçebilmektedir. Manyetik İndüksiyon açı sensör takılabilmektedir Harici İncliometre girişi bulunmaktadır. 2 Adet Limit sensörü takılabilmektedir. Sıcaklık Sensörü bulunmaktadır. Kapalı döngü içerisinde istenilen açıda konumunu sabitleyebilmektedir. Gerçek zamanlı bulunduğu açıyı sıcaklığı motor hızını yönünü gibi bilgi isteklerini cevaplayabilmektedir. RS 485 Donanım alt yapısını kullanarak uzak mesafeler (~1200m) ile rahatlıkla haberleşebilmektedir. MODBUS RTU Yazılım protokolünü sayesinde çok sayıda cihazı eş zamanlı rahat kullanımı bulunmaktadır. IP Korumasına sahip kutusu ile uzun yıllar olumsuz hava koşullarında çalışma yapabilmektedir. Sıvı geçirmez özel kaplamalı soketlemeler sayesinde korozyona uğramayan bir yapısı vardır. Modüler yapısı sayesinde arıza veya proje değişikliklerinde kolay değişimi ve uyumu sağlanmaktadır. Tekrarlayıcı ile kullanımında 256 Adet Cihaz aynı kablolama üzerinde Adreslenebilmektedir.  Dahili Güç kaynağı sayesinde direkt olarak şebekeye bağlanarak çalışmaktadır. Üzerindeki 3 adet durum ledleri sayesinde çalışma durum bildirimler alınabilmektedir. "
+  },
+  "product6": {
+    "header": "BLDC Motor Sürücü",
+    "content": "80V ve 50A`e kadar sürdürebilen yüksek akım özellikli bir motor denetleyicisidir. Kontrol ünitesi, Alan Yönelimli Kontrol (FOC) / Vektör kontrol, Trapezoidal veya Sinusoidal modunda çalışabilir. Rotor pozisyonunu tespit etmek ve kesintisiz dönüş sağlamak için motorların 3 sargılarına güç verilmesini sağlamak için çeşitli sensör tipleri desteklenir. Kontrolör, sensörsüz motorları FOC modda çalıştırabilir. Motor açık veya kapalı döngü hız modunda, pozisyon modunda veya tork modunda çalıştırılabilir. Tulpar_250, bir Analog ve komut veya geri besleme girişi, limit anahtarları veya diğer birçok fonksiyon olarak yeniden kaybolan birkaç Dijital ve Darbe I / O`ya sahiptir. Tulpar_250, bir RC radyodan, Analog potansiyometreden, kablosuz modemden veya mikrobilgisayardan alınan komutları kabul eder."
+  },
+  "label": {
+    "software": "Yazalım",
+    "robotic": "Robotik Sistemler",
+    "automation": "Otomasyon"
+  },
+  "button": {
+    "video": "Video Link",
+    "visit": "Ziyaret Et",
+    "datasheet": "Teknik Döküman",
+    "detail": "Daha Fazla"
+  }
+}

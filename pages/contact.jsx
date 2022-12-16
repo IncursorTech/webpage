@@ -1,11 +1,9 @@
 import { Box } from '@chakra-ui/react';
 import ContactSection from 'components/ContactSection';
-import CustomContainer from 'components/CustomContainer';
 import Header from 'components/Header';
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import styled from 'styled-components';
 export default function ContactPage() {
   const { t } = useTranslation('about , form , header');
   return (

@@ -1,4 +1,5 @@
 import Features from 'components/Features';
+import Products from 'components/Products';
 import { EnvVars } from 'env';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
@@ -22,6 +23,7 @@ export default function Homepage() {
       </Head>
       <Hero />
       <Features />
+      <Products />
     </>
   );
 }
@@ -29,7 +31,17 @@ export default function Homepage() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['statics', 'home', 'navbar', 'footer', 'features', 'about', 'solution'])),
+      ...(await serverSideTranslations(locale, [
+        'statics',
+        'home',
+        'navbar',
+        'footer',
+        'features',
+        'about',
+        'solution',
+        'projects',
+        'hero',
+      ])),
       posts: await getAllPosts(),
       // Will be passed to the page component as props
     },

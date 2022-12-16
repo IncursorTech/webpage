@@ -1,4 +1,17 @@
-import { Box, Button, ButtonGroup, chakra, Checkbox, FormControl, FormLabel, Input, Select, SimpleGrid, Textarea } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  chakra,
+  Checkbox,
+  FormControl,
+  FormLabel,
+  Input,
+  Select,
+  SimpleGrid,
+  Stack,
+  Textarea,
+} from '@chakra-ui/react';
 import Header from 'components/Header';
 import Statics from 'components/Statics';
 import { useTranslation } from 'next-i18next';
@@ -18,13 +31,13 @@ export default function ContactPage() {
   });
   const [value, setValue] = useState(false);
   const [clicked, onClick] = useState(false);
-  const [sendInfo, sendMail] = useState('0');
+  const [sendInfo, sendMail] = useState('none');
 
   useEffect(() => {
     console.log(clicked);
     if (value) {
       if (clicked) {
-        sendMail('1');
+        sendMail('grid');
         setTimeout(() => window.location.reload(false), 1000);
       }
       setOpacity({
@@ -140,43 +153,28 @@ export default function ContactPage() {
                 borderColor: 'gray.500',
               }}
             />
-            <SimpleGrid columns={{ base: 1, sm: 1, md: 1 }} spacing={10}>
+            <Stack direction={'column'} spacing={10}>
               <Checkbox size={'lg'} borderColor={'black'} mt={'2rem'} colorScheme="black" onChange={() => setValue(!value)}>
                 <chakra.p fontSize={{ base: 'sm', md: 'md' }}> {t('form:data')}</chakra.p>
               </Checkbox>
-              <chakra.p mt={3} opacity={sendInfo} fontSize={{ base: 'sm', md: 'md' }}>
-                {' '}
+              <chakra.p display={sendInfo} fontSize={{ base: 'sm', md: 'md' }}>
                 Mailiniz başarılı bir şekilde gönderilmiştir.
               </chakra.p>
-              <SimpleGrid columns={{ base: 2, sm: 1, md: 2 }} spacing={10}>
-                <ButtonGroup>
-                  <Button
-                    leftIcon={<BsPaperclip />}
-                    variant="solid"
-                    h={'4rem'}
-                    border={'1px'}
-                    bg={'none'}
-                    borderColor={'black'}
-                    _hover={{
-                      bg: 'none',
-                    }}
-                  ></Button>
-                </ButtonGroup>
-                <Button
-                  type="submit"
-                  opacity={button.opacity}
-                  variant="solid"
-                  h={'4rem'}
-                  border={'1px'}
-                  bg={'none'}
-                  borderColor={'black'}
-                  _hover={button.hover}
-                  onClick={() => onClick(true)}
-                >
-                  {t('form:send')}
-                </Button>
-              </SimpleGrid>
-            </SimpleGrid>
+              <Button
+                type="submit"
+                opacity={button.opacity}
+                variant="solid"
+                h={'4rem'}
+                w={'auto'}
+                border={'1px'}
+                bg={'none'}
+                borderColor={'black'}
+                _hover={button.hover}
+                onClick={() => onClick(true)}
+              >
+                {t('form:send')}
+              </Button>
+            </Stack>
           </Box>
         </Box>
       </Box>

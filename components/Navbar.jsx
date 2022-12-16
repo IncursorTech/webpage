@@ -302,7 +302,7 @@ const NavItems = [
 ];
 const NavbarContainer = styled.div`
   position: fixed;
-  z-index: var(--z-navbar);
+  z-index: 10;
   width: 100%;
   background-color: ${(p) => (p.transparent ? `#EBECEC` : 'rgba(0 , 0 , 0 , 0)')};
 

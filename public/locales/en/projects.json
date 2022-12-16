@@ -1,0 +1,38 @@
+{
+  "header": "Projects",
+  "product1": {
+    "header": "wetreat",
+    "content": "Wetreat.com.tr is a CRM-based online health services and consultancy platform that we have developed in the field of Health Tourism. Through this platform, you can turn the surgery you want to be in Turkey into a detailed plan with many choices such as accommodation, interpreter, transfer, and provide the best service. You can create a demand to get it."
+  },
+  "product2": {
+    "header": "Agricultural Activity Robot",
+    "content": "It is about autonomous agricultural support robot design and field applications. Agricultural support robot design with net crop prediction in the field, sowing and replanting of seedless seeds, and early detection and warning system of Cercospora disease."
+  },
+  "product3": {
+    "header": "Seder Egitim",
+    "content": "The Inventory for Determining the Vocational Tendency of Students with Special Education Needs Benefiting from Inclusion/Integration Educational Applications"
+  },
+  "product4": {
+    "header": "360° Virtual Tour",
+    "content": "As we evolve into VR compatible HTML5-based 360 Virtual Tours, we respond to changing needs with Matterport 3D Virtual Tour in cloud-based virtual tours."
+  },
+  "product5": {
+    "header": "Sun Tracking System",
+    "content": "300W 24V DC Motor can control direction and speed. Thanks to the IMU on it, it can measure its own angle independent of external sensors. Magnetic Induction angle sensor can be attached. There is an external incliometer input. 2 Limit sensors can be attached. There is a temperature sensor. There is a temperature sensor at the desired angle in a closed loop. It can fix its position. It can respond to information requests such as real-time angle, temperature, motor speed, direction. It can communicate easily over long distances (~1200m) using RS 485 Hardware infrastructure. It can easily use many devices simultaneously thanks to MODBUS RTU Software protocol. Box with IP Protection It can work in adverse weather conditions for many years with its liquid-proof special coated sockets. It has a structure that does not suffer from corrosion. Thanks to its modular structure, it is easy to change and adapt in case of malfunction or project changes. Can be used with repeaters 256 Devices can be addressed on the same cabling. Thanks to the internal power supply, it works by connecting directly to the mains. Thanks to the 3 status LEDs on it, operating status notifications can be received. "
+  },
+  "product6": {
+    "header": "BLDC Motor Driver",
+    "content": "It is a high-current motor controller capable of driving up to 80V and 50A. The control unit can operate in Field Oriented Control (FOC) / Vector control, Trapezoidal or Sinusoidal mode. It has 3 windings of motors to detect rotor position and provide uninterrupted rotation. Various types of sensors are supported to ensure power is supplied. The controller can run sensorless motors in FOC mode. The motor can be operated in open or closed loop speed mode, position mode or torque mode. Tulpar_250 is an Analog and as a command or feedback input, limit switches or many other functions It has several Digital and Pulse I/Os that are lost again. The Tulpar_250 accepts commands from an RC radio, Analog potentiometer, wireless modem or microcomputer."
+  },
+  "label": {
+    "software": "Software",
+    "robotic": "Robotic",
+    "automation": "Automation"
+  },
+  "button": {
+    "video": "Video Link",
+    "visit": "Visit Website",
+    "datasheet": "Technical Document",
+    "detail": "Details"
+  }
+}

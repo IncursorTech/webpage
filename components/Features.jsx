@@ -32,42 +32,57 @@ const Feature = ({ title, text, icon }) => {
 export default function SimpleThreeColumns() {
   const { t } = useTranslation('features');
   return (
-    <Box maxW="150em" mb={'10rem'} mx={'auto'} pb={5} px={{ base: 2, sm: 12, md: 17 }}>
-      <chakra.h1 textAlign={'left'} fontSize={'4xl'} py={10} mb={'5rem'} fontWeight={'bold'}>
+    <Box maxW="150em" mx={'auto'} px={{ base: 2, sm: 12, md: 17 }} py={{ base: 2, sm: 12, md: 100 }}>
+      <chakra.h1 display={{ sm: 'grid', md: 'none' }} textAlign={'left'} fontSize={'4xl'} py={10} fontWeight={'bold'}>
         {t('features:header')}
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, sm: 1, md: 2 }} spacing={10}>
-        <Feature
-          icon={<Icon as={BsFillGearFill} w={10} h={10} />}
-          title={t('features:system.title')}
-          text={t('features:system.description')}
-        />
-        <Feature
-          icon={<Icon as={BsTerminalFill} w={10} h={10} />}
-          title={t('features:software.title')}
-          text={t('features:software.description')}
-        />
-        <Feature
-          icon={<Icon as={BsTools} w={10} h={10} />}
-          title={t('features:hardware.title')}
-          text={t('features:hardware.description')}
-        />
-        <Feature
-          icon={<Icon as={BsCalculatorFill} w={10} h={10} />}
-          title={t('features:algorithms.title')}
-          text={t('features:algorithms.description')}
-        />
-        <Feature
-          icon={<Icon as={BsFillQuestionSquareFill} w={10} h={10} />}
-          title={t('features:consultancy.title')}
-          text={t('features:consultancy.description')}
-        />
-        <Feature
-          icon={<Icon as={BsFillCalendar3Fill} w={10} h={10} />}
-          title={t('features:supply.title')}
-          text={t('features:supply.description')}
-        />
-      </SimpleGrid>
+      <Flex>
+        <Flex display={{ base: 'none', md: 'grid' }} flex={1} justify={'center'} align={'center'}>
+          <chakra.h1
+            transformOrigin={'50% 50%'}
+            transform={'rotate(-90deg)'}
+            textAlign={'center'}
+            fontSize={'4xl'}
+            py={10}
+            fontWeight={'bold'}
+            width={'100%'}
+          >
+            {t('features:header')}
+          </chakra.h1>
+        </Flex>
+        <SimpleGrid flex={10} columns={{ base: 1, sm: 1, md: 2 }} spacing={10}>
+          <Feature
+            icon={<Icon as={BsFillGearFill} w={10} h={10} />}
+            title={t('features:system.title')}
+            text={t('features:system.description')}
+          />
+          <Feature
+            icon={<Icon as={BsTerminalFill} w={10} h={10} />}
+            title={t('features:software.title')}
+            text={t('features:software.description')}
+          />
+          <Feature
+            icon={<Icon as={BsTools} w={10} h={10} />}
+            title={t('features:hardware.title')}
+            text={t('features:hardware.description')}
+          />
+          <Feature
+            icon={<Icon as={BsCalculatorFill} w={10} h={10} />}
+            title={t('features:algorithms.title')}
+            text={t('features:algorithms.description')}
+          />
+          <Feature
+            icon={<Icon as={BsFillQuestionSquareFill} w={10} h={10} />}
+            title={t('features:consultancy.title')}
+            text={t('features:consultancy.description')}
+          />
+          <Feature
+            icon={<Icon as={BsFillCalendar3Fill} w={10} h={10} />}
+            title={t('features:supply.title')}
+            text={t('features:supply.description')}
+          />
+        </SimpleGrid>
+      </Flex>
       <Flex align={'center'} justify={'center'} p={10}>
         <NextLink
           href={'/solution'}
