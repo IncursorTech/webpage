@@ -7,7 +7,7 @@ import { createGlobalStyle } from 'styled-components';
 //   desktop: 1024;
 //   largeDesktop: 1440;
 // }
-export const GlobalStyle = createGlobalStyle `
+export const GlobalStyle = createGlobalStyle`
 
 .next-light-theme {
   --background: 251,251,253;

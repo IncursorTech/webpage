@@ -1,41 +1,27 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import styled from 'styled-components';
-import CustomContainer from 'components/CustomContainer';
-import NotFoundIllustration from 'components/NotFoundIllustration';
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { Box, Flex, Stack } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 export default function NotFoundPage() {
-    return (<Wrapper>
-      <CustomContainer>
-        <ImageContainer>
-          <NotFoundIllustration />
-        </ImageContainer>
-        <Title>404</Title>
-        <Description>Oh, that&apos;s unfortunate! Page not found 😔</Description>
-      </CustomContainer>
-    </Wrapper>);
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/');
+  }, []);
+
+  return (
+    <Box>
+      <Flex p={5} minH={'100vh'} align={'center'} justify={'center'} bgGradient="linear(to-l, #0077ffaa, #ff002baa)">
+        <Skeleton
+          startColor="white"
+          endColor="gray.300"
+          minW={{ base: '95vw', md: '40vw' }}
+          minH={{ base: '40vw', md: '40vw' }}
+          rounded={'3xl'}
+        >
+          <Stack></Stack>
+        </Skeleton>
+      </Flex>
+    </Box>
+  );
 }
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['common', 'home', 'navbar', 'countries'])),
-            // Will be passed to the page component as props
-        },
-    };
-}
-const Wrapper = styled.div `
-  background: rgb(var(--background));
-  margin: 10rem 0;
-  text-align: center;
-`;
-const Title = styled.h1 `
-  font-size: 5rem;
-  margin-top: 5rem;
-`;
-const Description = styled.div `
-  font-size: 3rem;
-  opacity: 0.8;
-  margin-top: 2.5rem;
-`;
-const ImageContainer = styled.div `
-  width: 25rem;
-  margin: auto;
-`;

@@ -4,19 +4,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { StepsStyleConfig as Steps } from 'chakra-ui-steps';
-import Footer from 'components/FooterChakra';
 import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { ColorModeScript } from 'nextjs-color-mode';
-import { CookiesProvider } from 'react-cookie';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Provider } from 'react-redux';
-import store from 'store/store';
-// const Navbar = dynamic(() => import('components/Navbar'), {
-//   ssr: false,
-// });
+
 const theme = extendTheme({
   fontSizes: {
     xs: '1rem',
@@ -51,17 +45,13 @@ function Root({ Component, pageProps }) {
         /> */}
         {/* <script async src="https://www.google-analytics.com/analytics.js"></script> */}
       </Head>
-      <Provider store={store}>
-        <ChakraProvider theme={theme}>
-          <ColorModeScript />
-          <GlobalStyle />
-          <CookiesProvider>
-            <Navbar />
-            <Component {...pageProps} />
-            <Footer />
-          </CookiesProvider>
-        </ChakraProvider>
-      </Provider>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript />
+        {/* <GlobalStyle /> */}
+        <Navbar />
+        <Component {...pageProps} />
+        {/* <Footer /> */}
+      </ChakraProvider>
     </Box>
   );
 }

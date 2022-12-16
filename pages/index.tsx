@@ -11,8 +11,6 @@ import NextLink from 'next/link';
 import { questions } from 'public/envanter';
 import { useEffect, useState } from 'react';
 
-import { Pie } from 'react-chartjs-2';
-
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const country = [
@@ -1291,7 +1289,7 @@ export default function SignupCard() {
               <Text fontSize={'3rem'}>
                 <b> KAMEB</b>
               </Text>
-              <Text fontSize={'2xl'}>Özel Eğitime İhtiyacı Olan Keynaştırma Öğrencilerinin Meleki Eğilimin Belirleme Envanteri</Text>
+              <Text fontSize={'2xl'}>Özel Eğitime İhtiyacı Olan Kaynaştırma Öğrencilerinin Mesleki Eğilimin Belirleme Envanteri</Text>
             </Box>
             <HStack justifyContent={'center'}>
               <Button

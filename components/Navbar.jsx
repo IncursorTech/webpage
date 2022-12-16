@@ -30,38 +30,8 @@ import incursorLogo from '../public/images/incursor-logo.png';
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const { t } = useTranslation('navbar');
-  const navbarSelector = useSelector((storeState) => storeState.navbarState);
-  const [scrollingDirection, setScrollingDirection] = useState('none');
   const router = useRouter();
-  const lastScrollY = useRef(0);
-  const lastRoute = useRef('');
-  const stepSize = useRef(50);
-  const scrollPositionCallback = ({ currPos }) => {
-    const routerPath = router.asPath;
-    const hasRouteChanged = routerPath !== lastRoute.current;
-    if (hasRouteChanged) {
-      lastRoute.current = routerPath;
-      setScrollingDirection('none');
-      return;
-    }
-    const currentScrollY = currPos.y;
-    const scrollDifference = Math.abs(lastScrollY.current - currentScrollY);
-    const hasScrolledWholeStep = scrollDifference >= stepSize.current;
-    const isInNonCollapsibleArea = lastScrollY.current > -50;
-    if (isInNonCollapsibleArea) {
-      setScrollingDirection('none');
-      lastScrollY.current = currentScrollY;
-      return;
-    }
-    if (!hasScrolledWholeStep) {
-      lastScrollY.current = currentScrollY;
-      return;
-    }
-    setScrollingDirection(currPos.y <= -10 ? 'up' : 'down');
-    lastScrollY.current = currentScrollY;
-  };
-  useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50);
-  const isNavbarHidden = scrollingDirection === 'up';
+
   const handleLocaleChange = (event) => {
     const { value } = event.target;
 
@@ -69,8 +39,9 @@ export default function WithSubnavigation() {
       locale: value,
     });
   };
+
   return (
-    <NavbarContainer hidden={false} transparent={isNavbarHidden} static={navbarSelector.isStatic}>
+    <NavbarContainer hidden={false} static={true}>
       <Box px={{ base: '0', sm: '3rem' }}>
         <Flex
           bg={'rgba(0 , 0 , 0 , 0)'}
@@ -121,9 +92,7 @@ export default function WithSubnavigation() {
                 </HStack>
               </Flex>
               <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
-                <Flex display={{ base: 'none', lg: 'flex' }}>
-                  <DesktopNav t={t} />
-                </Flex>
+                <Flex display={{ base: 'none', lg: 'flex' }}></Flex>
               </Flex>
 
               <Box justifyContent={'flex-end'} display={{ base: 'none', lg: 'flex' }}>
@@ -154,152 +123,10 @@ export default function WithSubnavigation() {
             </SimpleGrid>
           </Box>
         </Flex>
-
-        <Collapse in={isOpen} animateOpacity>
-          <MobileNav t={t} />
-        </Collapse>
       </Box>
     </NavbarContainer>
   );
 }
-const DesktopNav = () => {
-  const { t } = useTranslation('navbar');
-  const linkColor = useColorModeValue('black', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.400', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-  return (
-    <Stack direction={'row'} spacing={30}>
-      {NavItems.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <NextLink href={navItem.href ?? '#'} passHref>
-                <Text
-                  p={2}
-                  cursor={'pointer'}
-                  fontSize={'xl'}
-                  fontWeight={400}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
-                  }}
-                >
-                  {t(navItem.label)}
-                </Text>
-              </NextLink>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent border={0} boxShadow={'xl'} bg={popoverContentBgColor} p={4} rounded={'xl'} minW={'sm'}>
-                <Stack>
-                  {navItem.children.map((child, i) => (
-                    <DesktopSubNav t={t} key={i} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  );
-};
-const DesktopSubNav = ({ t, label, href, subLabel }) => {
-  return (
-    <Link href={href} role={'group'} display={'block'} p={2} rounded={'md'} _hover={{ bg: useColorModeValue('#black', 'gray.900') }}>
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text transition={'all .3s ease'} _groupHover={{ color: 'blue.400' }} fontWeight={500}>
-            {t(label)}
-          </Text>
-          <Text fontSize={'xl'}>{t(subLabel)}</Text>
-        </Box>
-        <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}
-        >
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
-  );
-};
-const MobileNav = () => {
-  return (
-    <Stack bg={'#ebecec'} p={4} fontSize={'2rem'} display={{ md: 'none' }}>
-      {NavItems.map((navItem, i) => (
-        <MobileNavItem key={i} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
-  const { t } = useTranslation('navbar');
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? '#'}
-        justify={'space-between'}
-        align={'center'}
-        _hover={{
-          textDecoration: 'none',
-        }}
-      >
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
-          {t(label)}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            fill={'white'}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack mt={2} pl={4} borderLeft={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')} align={'start'}>
-          {children &&
-            children.map((child, i) => (
-              <Link key={i} py={2} href={child.href}>
-                {t(child.label)}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  );
-};
-const NavItems = [
-  {
-    label: 'navbar:home',
-    href: '/#',
-  },
-  {
-    label: 'navbar:solution',
-    href: '/solution',
-  },
-  {
-    label: 'navbar:about',
-    href: '/about',
-  },
-  {
-    label: 'navbar:contact',
-    href: '/contact',
-  },
-];
 const NavbarContainer = styled.div`
   position: fixed;
   z-index: 10;
