@@ -138,7 +138,7 @@ export default function Products() {
               <Box
                 flex={selectedObjectClassName === `element${index}` ? 1.5 : 1}
                 className={`element${index}`}
-                transition={'ease-in-out .5s'}
+                transition={'ease-in-out .8s'}
                 transform={rotateState}
                 key={index}
                 bg={'white'}
@@ -151,12 +151,12 @@ export default function Products() {
                 zIndex={0}
                 onMouseLeave={() => {
                   setSelectedObjectClassName('');
-                  setClick(!click);
+                  setClick(true);
                 }}
               >
-                <Stack transition={'ease-in-out .5s'} opacity={rotateState === 'rotateY(180deg)' ? '0' : '1'} spacing={4} h={'auto'}>
+                <Stack opacity={rotateState === 'rotateY(180deg)' ? '0' : '1'} spacing={4} h={'auto'}>
                   <Box
-                    transition={'ease-in-out .5s'}
+                    transition={'ease-in-out .8s'}
                     h={selectedObjectClassName === `element${index}` ? '35rem' : '25rem'}
                     bg={'gray.100'}
                     pos={'relative'}
@@ -171,7 +171,7 @@ export default function Products() {
                   <Heading color={'gray.700'} textAlign={'left'} fontSize={'2xl'} fontFamily={'body'} textTransform={'uppercase'}>
                     {item.header}
                   </Heading>
-                  <Box>
+                  <Box transition={'ease-in-out .8s'}>
                     <Text display={selectedObjectClassName === `element${index}` ? 'none' : 'grid'} fontSize={'md'} color={'black'}>
                       {click && selectedObjectClassName === `element${index}` ? item.content : item.content.slice(0, 200)}...
                     </Text>
@@ -188,7 +188,7 @@ export default function Products() {
                       h={'5rem'}
                       bg={'white'}
                       rightIcon={
-                        selectedObjectClassName === `element${index}` ? (
+                        selectedObjectClassName !== `element${index}` ? (
                           <AiOutlineArrowDown color="black" />
                         ) : (
                           <AiOutlineArrowUp color="black" />
@@ -199,6 +199,7 @@ export default function Products() {
                         border: '2px',
                       }}
                       onClick={() => {
+                        setSelectedObjectClassName(`element${index}`);
                         click ? setSelectedObjectClassName(`element${index}`) : setSelectedObjectClassName('');
                         setClick(!click);
                       }}
@@ -228,7 +229,7 @@ export default function Products() {
                 zIndex={0}
                 onMouseLeave={() => {
                   setSelectedObjectClassName('');
-                  setClick(!click);
+                  setClick(true);
                 }}
               >
                 <Stack transition={'ease-in-out .5s'} opacity={rotateState === 'rotateY(180deg)' ? '0' : '1'} spacing={4} h={'auto'}>
@@ -263,7 +264,7 @@ export default function Products() {
                       h={'5rem'}
                       bg={'white'}
                       rightIcon={
-                        selectedObjectClassName === `element${index + 2}` ? (
+                        selectedObjectClassName !== `element${index + 2}` ? (
                           <AiOutlineArrowDown color="black" />
                         ) : (
                           <AiOutlineArrowUp color="black" />
@@ -274,6 +275,7 @@ export default function Products() {
                         border: '2px',
                       }}
                       onClick={() => {
+                        setSelectedObjectClassName(`element${index + 2}`);
                         click ? setSelectedObjectClassName(`element${index + 2}`) : setSelectedObjectClassName('');
                         setClick(!click);
                       }}
@@ -296,7 +298,6 @@ export default function Products() {
         {projects.map((item, index) => (
           <Box
             transition={'ease-in-out .5s'}
-            transform={rotateState}
             key={index}
             bg={'white'}
             boxShadow={'2xl'}
@@ -307,45 +308,7 @@ export default function Products() {
             h={'auto'}
             zIndex={0}
           >
-            <Stack
-              top={'0'}
-              left={'0'}
-              p={5}
-              position={'absolute'}
-              zIndex={1}
-              transition={'ease-in-out .5s'}
-              transform={'rotateY(180deg)'}
-              opacity={rotateState === 'rotateY(180deg)' ? '1' : '0'}
-              spacing={4}
-              w={'100%'}
-              h={'auto'}
-            >
-              <Text color={'green.500'} textTransform={'uppercase'} fontWeight={800} fontSize={'sm'} letterSpacing={1.1}></Text>
-              <Heading color={'gray.700'} textAlign={'left'} fontSize={'2xl'} fontFamily={'body'} textTransform={'uppercase'}>
-                {item.header}
-              </Heading>
-              <Box>
-                <Text fontSize={'md'} color={'black'}>
-                  {item.content}
-                </Text>
-              </Box>
-              <Flex align={'flex-end'} justify={'center'} w={'100%'} h={'50%'}>
-                <Button
-                  size={'lg'}
-                  h={'5rem'}
-                  bg={'white'}
-                  rightIcon={<AiOutlineArrowDown color="black" />}
-                  _hover={{
-                    bg: 'none',
-                    border: '2px',
-                  }}
-                  onClick={() => setRotateState('rotateY(0deg)')}
-                >
-                  {t('projects:button.detail')}
-                </Button>
-              </Flex>
-            </Stack>
-            <Stack zIndex={2} transition={'ease-in-out .5s'} opacity={rotateState === 'rotateY(180deg)' ? '0' : '1'} spacing={4} h={'auto'}>
+            <Stack zIndex={2} transition={'ease-in-out .5s'} spacing={4} h={'auto'}>
               <Box h={'30%'} bg={'gray.100'} pos={'relative'} display={'flex'} justifyContent={'center'}>
                 <Image w={'100%'} h={'100%'} src={item.url} objectFit="cover" alt={item.title} filter={'grayscale(40%)'} />
               </Box>
@@ -353,22 +316,40 @@ export default function Products() {
               <Heading color={'gray.700'} textAlign={'left'} fontSize={'2xl'} fontFamily={'body'} textTransform={'uppercase'}>
                 {item.header}
               </Heading>
-              <Box>
-                <Text fontSize={'md'} color={'black'}>
-                  {item.content.slice(0, 200)}...
-                </Text>
+              <Box transition={'ease-in-out .5s'}>
+                {selectedObjectClassName === `element${index}` ? (
+                  <Text fontSize={'md'} color={'black'}>
+                    {item.content}
+                    {item.component}
+                  </Text>
+                ) : (
+                  <Text fontSize={'md'} color={'black'}>
+                    {item.content.slice(0, 200)}...
+                  </Text>
+                )}
               </Box>
               <Flex align={'flex-end'} justify={'center'} w={'100%'} h={'100%'}>
                 <Button
                   size={'lg'}
                   h={'5rem'}
                   bg={'white'}
-                  rightIcon={<AiOutlineArrowDown color="black" />}
+                  rightIcon={
+                    selectedObjectClassName !== `element${index}` ? (
+                      <AiOutlineArrowDown color="black" />
+                    ) : (
+                      <AiOutlineArrowUp color="black" />
+                    )
+                  }
                   _hover={{
                     bg: 'none',
                     border: '2px',
                   }}
-                  onClick={() => setRotateState('rotateY(180deg)')}
+                  onClick={() => {
+                    setRotateState('rotateY(180deg)');
+                    setSelectedObjectClassName(`element${index}`);
+                    click ? setSelectedObjectClassName(`element${index}`) : setSelectedObjectClassName('');
+                    setClick(!click);
+                  }}
                 >
                   {t('projects:button.detail')}
                 </Button>
