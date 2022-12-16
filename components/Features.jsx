@@ -106,7 +106,7 @@ export default function SimpleThreeColumns() {
               border: '2px',
             }}
           >
-            For More
+            {t('features:button')}
           </Button>
         </NextLink>
       </Flex>

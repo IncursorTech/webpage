@@ -126,7 +126,7 @@ export default function WithSubnavigation() {
                 </Flex>
               </Flex>
 
-              <Box justifyContent={'flex-end'} display={{ base: 'none', lg: 'flex' }}>
+              <Flex align={'center'} justify={'flex-end'} display={{ base: 'none', lg: 'flex' }}>
                 <Select
                   bg={'white'}
                   onChange={handleLocaleChange}
@@ -150,7 +150,7 @@ export default function WithSubnavigation() {
                     🇺🇸
                   </option>
                 </Select>
-              </Box>
+              </Flex>
             </SimpleGrid>
           </Box>
         </Flex>
@@ -165,7 +165,6 @@ export default function WithSubnavigation() {
 const DesktopNav = () => {
   const { t } = useTranslation('navbar');
   const linkColor = useColorModeValue('black', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.400', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   return (
     <Stack direction={'row'} spacing={30}>
@@ -182,7 +181,8 @@ const DesktopNav = () => {
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
-                    color: linkHoverColor,
+                    color: 'gray.800',
+                    fontWeight: 'bold',
                   }}
                 >
                   {t(navItem.label)}

@@ -1,6 +1,7 @@
-import { Box, Container, Image, Link, SimpleGrid, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, HStack, Image, Link, SimpleGrid, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import NextLink from 'next/link';
+import { AiFillInstagram, AiFillLinkedin, AiFillYoutube } from 'react-icons/ai';
 
 const ListHeader = ({ children }) => {
   return (
@@ -27,14 +28,25 @@ export default function LargeWithLogoLeft() {
                 <NextLink href="/" passHref>
                   <Image src={'/images/incursor-logo.png'} alt="Incursor Logo" style={{ height: 'auto', width: '16rem' }} />
                 </NextLink>
-              </Box>{' '}
+                <HStack my={5} justifyContent={'center'} spacing={5}>
+                  <NextLink href="/" passHref>
+                    <AiFillLinkedin color="black" size={'3rem'}></AiFillLinkedin>
+                  </NextLink>
+                  <NextLink href="/" passHref>
+                    <AiFillInstagram color="black" size={'3rem'}></AiFillInstagram>
+                  </NextLink>
+                  <NextLink href="/" passHref>
+                    <AiFillYoutube color="black" size={'3rem'}></AiFillYoutube>
+                  </NextLink>
+                </HStack>
+                <Text fontSize={'md'} textColor={'black'} display={'flex'} justifyContent={'center'}>
+                  © 2022
+                  <Link href={'/'} ml={2}>
+                    inCursor
+                  </Link>
+                </Text>
+              </Box>
             </Box>
-            <Text fontSize={'md'} textColor={'black'} display={'flex'} justifyContent={'center'}>
-              © 2022
-              <Link href={'/'} ml={2}>
-                inCursor
-              </Link>
-            </Text>
           </Stack>
           <SimpleGrid columns={{ base: 2, sm: 2, md: 2 }} p={5}>
             <Stack align={{ base: 'center', sm: 'center', lg: 'left' }} fontSize={'lg'} color={'black'}>
