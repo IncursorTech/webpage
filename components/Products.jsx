@@ -130,6 +130,50 @@ export default function Products() {
       content: t('projects:product6.content'),
       tags: ['React.JS', 'Chakra UI', 'Next.JS', 'Payload CMS', 'UI', 'UX', 'Jitsi Meet', 'iyzico'],
     },
+    {
+      header: t('projects:product7.header'),
+      url: '/images/projects/artbox.png',
+      label: t('projects:label.exhibition'),
+      component: (
+        <NextLink
+          href={'https://artbox.global'}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Button size={'lg'} h={'5rem'} bg={'white'} border={'1px'} my={50}>
+            {t('projects:button.visit')}
+          </Button>
+        </NextLink>
+      ),
+      content: t('projects:product7.content'),
+      tags: ['Digital Art', 'Exhibition', 'TouchDesigner', 'Projection Mapping', 'Interactive Art'],
+    },
+    {
+      header: t('projects:product8.header'),
+      url: '/images/projects/akis-software.png',
+      label: t('projects:label.software'),
+      component: '',
+      content: t('projects:product8.content'),
+      tags: ['Digital class', 'Interactive Lessons', 'Simulation', 'WebGL'],
+    },
+    {
+      header: t('projects:product9.header'),
+      url: '/images/projects/boru-kalite.JPG',
+      label: t('projects:label.automation'),
+      component: '',
+      content: t('projects:product9.content'),
+      tags: ['Image Processing', 'Industrial Quality Control', 'PLC', 'Automated Systems'],
+    },
+    {
+      header: t('projects:product10.header'),
+      url: '/images/projects/educational-robot.png',
+      label: t('projects:label.robotic'),
+      component: '',
+      content: t('projects:product10.content'),
+      tags: ['Educational Robots', 'Robot Cars', 'Autonomous Driving', 'Raspberry Pi', 'Arduino'],
+    },
   ];
 
   return (
@@ -218,7 +262,7 @@ export default function Products() {
             ))}
           </Flex>
           <Flex py={5} gap={5} direction={{ sm: 'column', md: 'row' }} h={{ sm: '20%', md: 'auto' }} width={'100%'}>
-            {projects.slice(2, 6).map((item, index) => (
+            {projects.slice(2).map((item, index) => (
               <Box
                 flex={selectedObjectClassName === `element${index + 2}` ? 1.5 : 1}
                 className={`element${index + 2}`}

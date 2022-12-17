@@ -10,7 +10,7 @@
   },
   "product3": {
     "header": "Seder Egitim",
-    "content": "The Inventory for Determining the Vocational Tendency of Students with Special Education Needs Benefiting from Inclusion/Integration Educational Applications"
+    "content": "The inventory for determining the vocational tendency of students with special education needs benefiting from inclusion/integration educational applications"
   },
   "product4": {
     "header": "360° Virtual Tour",
@@ -24,13 +24,30 @@
     "header": "BLDC Motor Driver",
     "content": "It is a high-current motor controller capable of driving up to 80V and 50A. The control unit can operate in Field Oriented Control (FOC) / Vector control, Trapezoidal or Sinusoidal mode. It has 3 windings of motors to detect rotor position and provide uninterrupted rotation. Various types of sensors are supported to ensure power is supplied. The controller can run sensorless motors in FOC mode. The motor can be operated in open or closed loop speed mode, position mode or torque mode. Tulpar_250 is an Analog and as a command or feedback input, limit switches or many other functions It has several Digital and Pulse I/Os that are lost again. The Tulpar_250 accepts commands from an RC radio, Analog potentiometer, wireless modem or microcomputer."
   },
+  "product7": {
+    "header": "ARTBOX Digital Art Gallery",
+    "content": "We have completed a range of innovative and dynamic digital art projects that push the boundaries of traditional art forms. From projection mapping installations to interactive exhibitions, we use a variety of digital art software, including TouchDesigner, to create immersive experiences that engage and inspire audiences. Each project is a unique blend of art and technology, designed to transport viewers to a new world of creativity and possibility."
+  },
+  "product8": {
+    "header": "Digital Flow Simulation",
+    "content": "Digital flow simulation is the process of using computer software to model and analyze the movement of gases when they encounter obstacles in a system or environment. This can be used to predict how these substances will behave under different conditions, such as temperature, pressure, and flow rate, and can be used to optimize the design and performance of a variety of systems, including pipes, engines, aircraft, and more. Flow simulation is a highly complex and specialized field that requires a thorough understanding of fluid dynamics, mathematics, and computer modeling, and this simulation allows for an interactive learning process."
+  },
+  "product9": {
+    "header": "Pipe Quality Control System",
+    "content": "The pipe quality control system uses image processing techniques to perform quality control during the flexible pipe production process. Specifically designed and developed for Kayalar Press, this system aims to minimize production errors in pipe production. When the system detects that the quality has fallen below acceptable limits during the production process, it automatically stops the production line and sends information about the error to the FTP server. This allows errors and problems that may arise during the production process to be detected and the production stopped automatically, increasing production efficiency."
+  },
+  "product10": {
+    "header": "Educational Robots",
+    "content": "We are developing educational robots and autonomous vehicles to provide software, hardware, and training modules for students to work in the field of robotics. With these modules, students can learn how to design robots, gain knowledge in software and hardware, and learn how to control and program robots. Our goal is to enable students to continue their work in the field of robotics and benefit from future technological advances in this area."
+  },
   "label": {
     "software": "Software",
     "robotic": "Robotic",
-    "automation": "Automation"
+    "automation": "Automation",
+    "exhibition": "Exhibition"
   },
   "button": {
-    "video": "Video Link",
+    "video": "Watch Video",
     "visit": "Visit Website",
     "datasheet": "Technical Document",
     "detail": "Details"
