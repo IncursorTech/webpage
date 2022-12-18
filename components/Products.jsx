@@ -2,7 +2,7 @@ import { Box, Button, chakra, Flex, Heading, Image, SimpleGrid, Stack, Text } fr
 import { useTranslation } from 'next-i18next';
 import NextLink from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { AiFillTags, AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
+import { AiFillTags, AiOutlineArrowDown, AiOutlineArrowRight, AiOutlineArrowUp } from 'react-icons/ai';
 
 export default function Products() {
   const { t } = useTranslation('features , projects');
@@ -262,7 +262,7 @@ export default function Products() {
             ))}
           </Flex>
           <Flex py={5} gap={5} direction={{ sm: 'column', md: 'row' }} h={{ sm: '20%', md: 'auto' }} width={'100%'}>
-            {projects.slice(2).map((item, index) => (
+            {projects.slice(2, 6).map((item, index) => (
               <Box
                 flex={selectedObjectClassName === `element${index + 2}` ? 1.5 : 1}
                 className={`element${index + 2}`}
@@ -433,6 +433,33 @@ export default function Products() {
           </Box>
         ))}
       </SimpleGrid>
+      <Flex align={'center'} justify={'center'} p={10}>
+        <NextLink
+          href={'/projects'}
+          passHref
+          style={{
+            color: 'black',
+            bg: 'white',
+            fill: 'none',
+          }}
+          _hover={{
+            bg: 'none',
+          }}
+        >
+          <Button
+            size={'lg'}
+            h={'5rem'}
+            bg={'white'}
+            rightIcon={<AiOutlineArrowRight color="black" />}
+            _hover={{
+              bg: 'none',
+              border: '2px',
+            }}
+          >
+            {t('features:button')}
+          </Button>
+        </NextLink>
+      </Flex>
     </Box>
   );
 }
