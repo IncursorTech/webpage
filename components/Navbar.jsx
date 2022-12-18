@@ -288,6 +288,10 @@ const NavItems = [
     href: '/#',
   },
   {
+    label: 'navbar:projects',
+    href: '/projects',
+  },
+  {
     label: 'navbar:solution',
     href: '/solution',
   },

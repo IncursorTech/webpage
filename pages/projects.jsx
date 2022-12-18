@@ -316,7 +316,7 @@ export default function ContactPage() {
                     </Text>
                   </Box>
 
-                  <Flex align={'flex-end'} justify={'center'} w={'100%'} h={'100%'}>
+                  <Flex align={'flex-end'} justify={'center'} w={'100%'}>
                     <Button
                       className={`element${index}`}
                       size={'lg'}
