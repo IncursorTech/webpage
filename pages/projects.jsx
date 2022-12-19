@@ -18,7 +18,7 @@ export default function ContactPage() {
   const [rotateState, setRotateState] = useState('');
   const [click, setClick] = useState(false);
   const [sliderValue, setSliderValue] = React.useState(3);
-  const [category, setCategory] = React.useState('All');
+  const [category, setCategory] = React.useState(t('projects:all'));
   const [showTooltip, setShowTooltip] = React.useState(false);
 
   const projects = [
@@ -193,14 +193,17 @@ export default function ContactPage() {
         <Header title={t('header:projects')} imgURL={'background-3.png'} />
         <Box px={{ base: 5, md: '5rem' }}>
           <Stack p={5} direction={'row'} width={'100%'} spacing={5} bg={'white'} rounded={'lg'}>
-            <Flex width={'50%'}>
+            <Flex gap={5} align={'center'} width={'50%'}>
+              <Text fontWeight={'bold'} fontSize={'lg'}>
+                {t('projects:category')}
+              </Text>
               <Menu>
                 <MenuButton
                   _hover={{
                     bg: 'none',
                     border: '2px',
                   }}
-                  border={'2px'}
+                  border={'1px'}
                   size={'lg'}
                   h={'5rem'}
                   bg={'white'}
@@ -223,43 +226,56 @@ export default function ContactPage() {
                   <MenuItem onClick={() => setCategory(t('projects:label.software'))} fontSize={'md'} size={'lg'} bg={'white'}>
                     {t('projects:label.software')}
                   </MenuItem>
-                  <MenuItem onClick={() => setCategory('All')} fontSize={'md'} size={'lg'} bg={'white'}>
-                    All
+                  <MenuItem onClick={() => setCategory(t('projects:all'))} fontSize={'md'} size={'lg'} bg={'white'}>
+                    {t('projects:all')}
                   </MenuItem>
                 </MenuList>
               </Menu>
             </Flex>
-            <Flex display={{ base: 'none', sm: 'none', md: 'flex' }} justify={'flex-end'} width={'50%'}>
-              <Slider
+            <Flex gap={5} display={{ base: 'none', sm: 'none', md: 'flex' }} align={'center'} justify={'flex-end'} width={'50%'}>
+              <Text fontWeight={'bold'} fontSize={'lg'}>
+                {t('projects:plan')}
+              </Text>
+              <Flex
                 width={'50%'}
-                id="slider"
-                defaultValue={3}
-                min={2}
-                max={4}
-                colorScheme="teal"
-                onChange={(v) => setSliderValue(v)}
-                onMouseEnter={() => setShowTooltip(true)}
-                onMouseLeave={() => setShowTooltip(false)}
+                h={'5rem'}
+                rounded={'lg'}
+                border={'1px'}
+                _hover={{
+                  bg: 'none',
+                  border: '2px',
+                }}
+                p={5}
               >
-                <SliderMark fontWeight={'bold'} value={2} mt="-3" ml="-1.5" fontSize="lg">
-                  2
-                </SliderMark>
-                <SliderMark fontWeight={'bold'} value={3} mt="-3" ml="-1.5" fontSize="lg">
-                  3
-                </SliderMark>
-                <SliderMark fontWeight={'bold'} value={4} mt="-3" ml="-1.5" fontSize="lg">
-                  4
-                </SliderMark>
-                <SliderTrack>
-                  <SliderFilledTrack />
-                </SliderTrack>
-                <Tooltip hasArrow bg="teal.500" color="white" placement="top" isOpen={showTooltip}>
-                  <SliderThumb />
-                </Tooltip>
-              </Slider>
+                <Slider
+                  id="slider"
+                  defaultValue={3}
+                  min={2}
+                  max={4}
+                  colorScheme="teal"
+                  onChange={(v) => setSliderValue(v)}
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
+                >
+                  <SliderMark fontWeight={'bold'} value={2} mt="3" ml="-1.5" fontSize="md">
+                    2
+                  </SliderMark>
+                  <SliderMark fontWeight={'bold'} value={3} mt="3" ml="-1.5" fontSize="md">
+                    3
+                  </SliderMark>
+                  <SliderMark fontWeight={'bold'} value={4} mt="3" ml="-1.5" fontSize="md">
+                    4
+                  </SliderMark>
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                  <Tooltip hasArrow bg="gray.500" color="white" placement="top" isOpen={showTooltip}>
+                    <SliderThumb />
+                  </Tooltip>
+                </Slider>
+              </Flex>
             </Flex>
           </Stack>
-
           <SimpleGrid
             transition={'ease-in-out .8s'}
             py={5}
@@ -270,7 +286,7 @@ export default function ContactPage() {
           >
             {projects.map((item, index) => (
               <Box
-                display={item.label === category || category === 'All' ? 'grid' : 'none'}
+                display={item.label === category || category === t('projects:all') ? 'grid' : 'none'}
                 flex={selectedObjectClassName === `element${index}` ? 1.5 : 1}
                 className={`element${index}`}
                 transition={'ease-in-out .8s'}

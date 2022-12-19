@@ -51,5 +51,8 @@
     "visit": "Visit Website",
     "datasheet": "Technical Document",
     "detail": "Details"
-  }
+  },
+  "category": "Category:",
+  "plan": "Grid Plan:",
+  "all": "All"
 }

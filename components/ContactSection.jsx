@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
-import { MdEmail, MdLocationOn, MdOutlineEmail, MdPhone } from 'react-icons/md';
+import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 export default function Contact() {
   const [clicked, onClick] = useState(false);
   const [value, setValue] = useState(false);

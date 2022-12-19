@@ -1,12 +1,12 @@
 BEGIN:VCARD
 VERSION:4.0
-N:YILMAZ;Yunus;;;
-FN:Yunus YILMAZ
+N:ARI;İzzet Emre;;;
+FN:İzzet Emre ARI
 ORG:incursor technology
 TITLE:Co-Founder
-TEL;TYPE=home,voice,pref:+90-507-591-7817
+TEL;TYPE=home,voice,pref:+90-531-350-1455
 URL:www.incursor.com
-EMAIL:yunus@incursor.com
+EMAIL:izzetemre@incursor.com
 REV:20080424T195243Z
 ADR;TYPE=intl,work,postal,parcel:;;Çankaya;Ankara;;12345;Turkiye
 END:VCARD

@@ -1,4 +1,4 @@
-import { Box, Button, chakra, Image, SimpleGrid } from '@chakra-ui/react';
+import { Box, Button, chakra, Image, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import CustomContainer from 'components/CustomContainer';
 
 import Header from 'components/Header';
@@ -6,8 +6,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 import styled from 'styled-components';
-
 const directory = [
   {
     fullName: 'Yunus YILMAZ',
@@ -48,10 +48,6 @@ export default function ContactPage() {
     setData(directory[router.query.key]);
   }, [router.isReady, router.query.key]);
 
-  const address = {
-    title: 'Karşıyaka Mah. 519.Sokak No:45/1',
-    country: 'Yenimahalle/Ankara',
-  };
   return (
     <>
       <ContactContainer>
@@ -62,30 +58,45 @@ export default function ContactPage() {
               <Box p={5}>
                 <chakra.h1 fontSize={'lg'} fontWeight={'500'}></chakra.h1>
               </Box>
-              <Box p={5} border={'2px'} rounded={'lg'}>
+              <Box bg={'white'} shadow={'lg'} p={5} rounded={'lg'}>
                 <SimpleGrid templateColumns={{ base: '1fr', sm: '1fr', md: '1fr', lg: '1fr 2fr' }} spacing={8}>
                   <Box>
                     <Image src={`/images/profiles/${data.image}.png`} alt="vcard" objectFit="cover" pb={5} rounded={'lg'} />
                   </Box>
                   <Box pl={5}>
-                    <chakra.h1 pb={'4rem'} fontSize={'2xl'} fontWeight={'700'}>
+                    <chakra.h1 pb={'2rem'} fontSize={'2xl'} fontWeight={'700'}>
                       {data.fullName}
                     </chakra.h1>
-                    <chakra.h1 pb={5} fontSize={'lg'} fontWeight={'500'}>
+                    <chakra.h1 pb={'2rem'} fontSize={'lg'} fontWeight={'500'}>
                       {data.position}
                     </chakra.h1>
-                    <chakra.h1 pb={'4rem'} fontSize={'lg'} fontWeight={'400'}>
-                      {data.mobile}
-                    </chakra.h1>
-                    <chakra.h1 pb={'4rem'} fontSize={'lg'} fontWeight={'400'}>
-                      {data.email + '@incursor.com'}
-                    </chakra.h1>
-                    <chakra.h1 fontSize={'lg'} fontWeight={'400'}>
-                      {address.title}
-                    </chakra.h1>
-                    <chakra.h1 fontSize={'lg'} fontWeight={'400'} pb={5}>
-                      {address.country}
-                    </chakra.h1>
+                    <Stack spacing={5} py={10}>
+                      <Stack direction={'row'} spacing={5}>
+                        <MdPhone color="black" size="3rem" />
+                        <Text fontSize="lg">{data.mobile}</Text>
+                      </Stack>
+                      <Stack direction={'row'} spacing={5}>
+                        <MdEmail color="black" size="3rem" />
+                        <Text fontSize="lg">{data.email + '@incursor.com'}</Text>
+                      </Stack>
+                      <Stack direction={'row'} spacing={5}>
+                        <NextLink
+                          href="https://www.youtube.com/@incursortech"
+                          passHref
+                          style={{
+                            display: 'flex',
+                            direction: 'row',
+                          }}
+                        >
+                          <MdLocationOn color="black" size="3rem" />
+                          <Text fontSize="lg">
+                            <b> INCURSOR OFFICE - RAVION DESIGN OFFICE </b>
+                            <br></br> Ümit Mahallesi, Okullar Sokak No:22/1 Çankaya / Ankara Türkiye
+                          </Text>
+                        </NextLink>
+                      </Stack>
+                    </Stack>
+
                     <NextLink href={`/vcard/${data.image}.vcf`} passHref>
                       <Button
                         size="md"

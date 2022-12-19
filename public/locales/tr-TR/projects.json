@@ -51,5 +51,8 @@
     "visit": "Ziyaret Et",
     "datasheet": "Teknik Döküman",
     "detail": "Daha Fazla"
-  }
+  },
+  "category": "Kategori:",
+  "plan": "Yerleşim Planı:",
+  "all": "Tümü"
 }

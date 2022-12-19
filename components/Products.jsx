@@ -370,7 +370,7 @@ export default function Products() {
         </Flex>
       </Flex>
       <SimpleGrid display={{ sm: 'grid', md: 'none' }} gap={5} templateColumns={'1fr'} p={5}>
-        {projects.map((item, index) => (
+        {projects.slice(0, 4).map((item, index) => (
           <Box
             transition={'ease-in-out .5s'}
             key={index}

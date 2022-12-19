@@ -29,13 +29,13 @@ export default function LargeWithLogoLeft() {
                   <Image src={'/images/incursor-logo.png'} alt="Incursor Logo" style={{ height: 'auto', width: '16rem' }} />
                 </NextLink>
                 <HStack my={5} justifyContent={'center'} spacing={5}>
-                  <NextLink href="/" passHref>
+                  <NextLink href="https://www.linkedin.com/company/incursor-technology/" passHref>
                     <AiFillLinkedin color="black" size={'3rem'}></AiFillLinkedin>
                   </NextLink>
-                  <NextLink href="/" passHref>
+                  <NextLink href="https://www.instagram.com/raviondesign/" passHref>
                     <AiFillInstagram color="black" size={'3rem'}></AiFillInstagram>
                   </NextLink>
-                  <NextLink href="/" passHref>
+                  <NextLink href="https://www.youtube.com/@incursortech" passHref>
                     <AiFillYoutube color="black" size={'3rem'}></AiFillYoutube>
                   </NextLink>
                 </HStack>
