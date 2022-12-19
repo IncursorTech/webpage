@@ -8,7 +8,6 @@ const { i18n } = require('./next-i18next.config');
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  experimental: { images: { allowFutureImage: true } },
   images: {
     domains: ['incursor.com'],
     deviceSizes: [320, 640, 1080, 1200],
